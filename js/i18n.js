@@ -1,408 +1,431 @@
 /* ==========================================================================
    Conform.ai — Dicionário de Internacionalização (PT-BR / EN)
+   Fontes das métricas:
+   - Normas (até 94%): 01_Canvas_e_Negocio/03_METODOLOGIA_ECONOMIA_TOKENS_E_CUSTOS.md
+   - Páginas auditadas (~88%): conform-ai-health/docs/benchmarks/token-reduction-methodology.md
+   - Custos e economia: Metodologia, seção 2
+   - Normas do simulador: 02_Produto_e_Arquitetura/cfmScrapingBlueprint.json
    ========================================================================== */
 
 const i18n = {
   pt: {
+    // Meta
+    metaTitle: "Conform.ai · Auditoria regulatória contínua em saúde",
+    metaDescription: "Agentes de IA que auditam sites e fluxos de saúde digital contra normas vigentes do CFM, ANVISA, ANS e LGPD, citando o artigo e a evidência de cada apontamento.",
+
+    // Acessibilidade
+    skipLink: "Pular para o conteúdo",
+    ariaLang: "Idioma da página",
+    ariaMenuOpen: "Abrir menu",
+    ariaMenuClose: "Fechar menu",
+    ariaGithub: "Abrir o repositório no GitHub",
+    ariaSimTabs: "Exemplos de laudo",
+    ariaNavMain: "Navegação principal",
+
     // Nav
-    navProblem: "O Problema",
-    navSolution: "Como Funciona",
-    navBmc: "Modelo de Negócio",
+    navProblem: "O problema",
+    navSolution: "Como funciona",
+    navBmc: "Modelo de negócio",
     navStack: "Tecnologia",
     navRoadmap: "Roadmap",
     navTeam: "Equipe",
-    navGithub: "Ver no GitHub",
-    badgeTrack: "Hack Brasil 2026 · Trilha 07: Logística & Automação",
+    navGithub: "GitHub",
+    badgeTrack: "Hack Brasil 2026 · Trilha 07",
 
     // Hero
-    heroTag: "Governança Regulatória & Automação Inteligente em Saúde",
+    heroTag: "Governança regulatória automatizada para a saúde digital",
     heroTitle: "Auditoria regulatória contínua com agentes de IA para a saúde digital",
-    heroDesc: "Substituímos meses de consultoria jurídica manual por governança autônoma em tempo real. Auditamos websites, termos de uso e fluxos clínicos contra as resoluções vigentes do CFM, ANVISA, ANS e LGPD com guardrails anti-alucinação e redução de mais de 90% no consumo de tokens.",
-    ctaGithub: "Explorar Código no GitHub",
-    ctaDoc: "Conhecer a Arquitetura",
+    heroDesc: "Monitoramos sites, termos de uso e fluxos clínicos contra as normas vigentes do CFM, ANVISA, ANS e LGPD. Cada apontamento vem com o artigo citado e a frase da página que o motivou.",
+    ctaGithub: "Ver o código no GitHub",
+    ctaDoc: "Como funciona",
 
     // Stats
-    stat1Number: "94%",
-    stat1Label: "Menos consumo de tokens via Firecrawl Markdown",
+    stat1Number: "até 94%",
+    stat1Label: "menos tokens ao ler as normas em Markdown limpo, em vez do PDF ou HTML bruto",
     stat2Number: "15 min",
-    stat2Label: "Tempo médio de diagnóstico vs. 45 dias manuais",
-    stat3Number: "100%",
-    stat3Label: "Rastreabilidade a artigos e normas vigentes",
+    stat2Label: "meta do diagnóstico completo, contra 30 a 60 dias de consultoria manual",
+    stat3Number: "Art. + trecho",
+    stat3Label: "em cada apontamento: o artigo vigente e a evidência encontrada na página",
 
-    // Verdict Simulator
-    simTitle: "Simulador de Laudo em Semáforo",
-    simSubtitle: "Diagnóstico regulatório automatizado em tempo real",
-    tabCritical: "🔴 Violação Crítica",
-    tabWarning: "🟡 Atenção",
-    tabCompliant: "🟢 Conforme",
+    // Faixa Item 6.9
+    synthBand: "Item 6.9 do Regulamento: este projeto usa somente casos sintéticos e normas públicas. Nenhum dado de paciente ou prontuário real é coletado, processado ou exibido.",
 
-    simNormLabel: "Norma Aplicável",
-    simArticleLabel: "Artigo & Dispositivo Legal",
-    simEvidenceLabel: "Evidência Detectada na Página",
-    simActionLabel: "Ação de Remediação Sugerida",
+    // Simulador
+    simTitle: "Exemplo de laudo em semáforo",
+    simSubtitle: "Casos sintéticos, normas do catálogo vigente",
+    tabCritical: "Crítico",
+    tabWarning: "Atenção",
+    tabCompliant: "Conforme",
+    verdictCritical: "Violação crítica",
+    verdictWarning: "Requer atenção",
+    verdictCompliant: "Em conformidade",
 
-    // Sim Data - Critical
-    critNorm: "Resolução CFM nº 2.336/2023 (Publicidade Médica)",
-    critArticle: "Artigo 5º, Inciso II — Vedação expressa a promessa de resultado e 'antes e depois' sem caráter educativo/científico.",
-    critEvidence: "'Garantimos 100% de recuperação estética sem cicatrizes em apenas 2 sessões.'",
-    critAction: "Remover a alegação de garantia de resultado e adequar o texto para caráter informativo de procedimentos médicos.",
+    simNormLabel: "Norma aplicável",
+    simArticleLabel: "Dispositivo",
+    simEvidenceLabel: "Evidência encontrada",
+    simActionLabel: "Ação recomendada",
 
-    // Sim Data - Warning
-    warnNorm: "Resolução CFM nº 2.454/2026 (Inteligência Artificial na Medicina)",
-    warnArticle: "Artigo 4º — Exigência de supervisão humana explícita e termo de esclarecimento ao paciente em sistemas de IA diagnóstica.",
-    warnEvidence: "Módulo de triagem automatizada sem aviso prévio de supervisão médica humana.",
-    warnAction: "Inserir checkbox de consentimento informado e botão de revisão clínica humana prévia.",
+    critNorm: "Resolução CFM nº 2.336/2023 · Publicidade médica",
+    critArticle: "Art. 11: vedação à promessa de resultado ou garantia de êxito de tratamento.",
+    critEvidence: "“Garantimos 100% de recuperação estética sem cicatrizes em apenas 2 sessões.”",
+    critAction: "Retirar a garantia de resultado e descrever o procedimento de forma informativa, deixando claro que a evolução varia de paciente para paciente.",
 
-    // Sim Data - Compliant
-    compNorm: "Resolução CFM nº 2.299/2021 (Prescrição Eletrônica & Telemedicina)",
-    compArticle: "Artigo 2º — Validação de assinatura digital com certificado padrão ICP-Brasil e identificação de CRM/RQE.",
-    compEvidence: "Assinatura digital ICP-Brasil presente com hash SHA-256 e CRM/RQE do emissor devidamente validados.",
-    compAction: "Nenhuma ação necessária. Fluxo clínico em conformidade integral.",
+    warnNorm: "Resolução CFM nº 2.314/2022 · Telemedicina",
+    warnArticle: "Art. 3º: teleconsulta com consentimento livre e esclarecido (TCLE) do paciente.",
+    warnEvidence: "O fluxo de teleconsulta abre a sala de atendimento sem registrar o aceite do TCLE.",
+    warnAction: "Exigir o aceite do TCLE antes de iniciar a teleconsulta e registrá-lo no prontuário.",
 
-    tokenHeader: "Eficiência de Contexto (Tokens Consumidos)",
-    tokenSavings: "Economia de ~94% (Markdown vs. HTML/PDF bruto)",
+    compNorm: "Resolução CFM nº 2.299/2021 · Prescrição e documentos digitais",
+    compArticle: "Art. 2º: requisitos de assinatura eletrônica em prescrições.",
+    compEvidence: "Prescrição assinada com certificado ICP-Brasil, com nome, CRM e UF do médico emissor.",
+    compAction: "Nenhuma ação necessária. O fluxo de prescrição atende ao requisito.",
 
-    // The Pain Section (Para Não-Médicos)
-    painTag: "A Realidade Regulatória",
-    painTitle: "Por que a regulação em saúde é um labirinto?",
-    painSubtitle: "Para quem não é da área médica, entender as regras da saúde parece lidar com um código impenetrável. Veja como esse problema afeta diretamente fundadores, desenvolvedores e pacientes.",
-    
-    painCard1Title: "Responsabilidade Pessoal e Ética",
-    painCard1Desc: "Diferente de um e-commerce ou SaaS comum, na saúde o Diretor Técnico responde com o próprio registro profissional (CRM) por falhas no marketing ou no código do produto. Uma falha de software pode custar a cassação do diploma médico.",
-    
-    painCard2Title: "Emaranhado de Órgãos e Normas Dispersas",
-    painCard2Desc: "O CFM publica dezenas de resoluções em PDFs complexos; a ANVISA regula softwares como dispositivos médicos (SaMD); a ANS dita regras de cobertura; e a LGPD (Art. 11) impõe rigor máximo sobre dados sensíveis de saúde.",
-    
-    painCard3Title: "O Custo Inviável para PMEs e Startups",
-    painCard3Desc: "Contratar bancas de advocacia especializadas custa de R$ 50.000 a R$ 100.000 e leva até 60 dias por parecer. Enquanto isso, usar IAs genéricas (como ChatGPT solto) gera alucinações graves, citando normas já revogadas e gerando faturas proibitivas de tokens.",
+    tokenHeader: "Tokens enviados ao modelo nesta página",
+    tokenSavings: "61.450 → 7.100 (−88%)",
+    tokenNote: "HTML bruto vs. Markdown limpo · média do benchmark de páginas de clínicas",
 
-    painHighlightTitle: "O Impacto na Prática:",
-    painHighlightText: "Um simples post de clínica anunciando 'antes e depois' sem os termos exigidos pela Resolução CFM nº 2.336/2023 gera denúncia imediata no CRM. Uma plataforma de telemedicina sem a trava certa de assinatura digital pode ter suas receitas médicas bloqueadas em farmácias de todo o Brasil.",
+    // Problema
+    painTag: "O problema",
+    painTitle: "Por que a regulação em saúde é um labirinto",
+    painSubtitle: "Para quem não é da área médica: as regras são muitas, estão espalhadas em PDFs de órgãos diferentes e quem responde por elas é uma pessoa física.",
 
-    // How It Works Section
-    howTag: "Arquitetura Inteligente",
-    howTitle: "Como o Conform.ai resolve esse abismo",
-    howSubtitle: "Um fluxo em 4 estágios que integra os melhores parceiros tecnológicos do mercado para transformar regulação em código acionável.",
+    painCard1Title: "A responsabilidade é pessoal",
+    painCard1Desc: "Toda empresa de saúde tem um Diretor Técnico médico. Ele responde eticamente, com o próprio registro no CRM, pelo que a empresa publica e pelo que o software faz. No limite, um processo ético pode levar à cassação do registro profissional.",
 
-    step1Partner: "Extração com Firecrawl",
-    step1Title: "1. Scraping Estruturado",
-    step1Desc: "Nosso motor de ingestão rastreia portais oficiais e páginas de clientes, convertendo HTMLs pesados e PDFs em Markdown semântico enxuto, reduzindo em mais de 90% os tokens necessários para auditoria.",
+    painCard2Title: "Quatro órgãos, normas dispersas",
+    painCard2Desc: "O CFM publica resoluções em PDF; a ANVISA regula software como dispositivo médico (SaMD); a ANS regula os planos de saúde; e a LGPD (Art. 11) trata dados de saúde como dados sensíveis.",
 
-    step2Partner: "Catálogo & Diretriz",
-    step2Title: "2. Resolução em 2 Estágios",
-    step2Desc: "Em vez de injetar centenas de normas de uma vez no modelo, um catálogo dinâmico de normas vigentes seleciona com precisão cirúrgica apenas as resoluções ativas pertinentes àquele produto, descartando normas revogadas.",
+    painCard3Title: "Caro para PMEs, arriscado com IA genérica",
+    painCard3Desc: "Uma auditoria regulatória inicial com consultoria especializada custa de R$ 25 mil a R$ 60 mil e leva de 30 a 60 dias. Um chatbot genérico, sem catálogo de normas vigentes, pode citar resoluções revogadas e gasta tokens lendo páginas inteiras.",
+
+    painHighlightTitle: "Na prática",
+    painHighlightText: "Um anúncio de clínica com fotos de “antes e depois” sem finalidade educativa contraria a Resolução CFM nº 2.336/2023 e pode virar processo ético no CRM. Uma prescrição digital sem assinatura ICP-Brasil pode ser recusada pela farmácia.",
+
+    // Como funciona
+    howTag: "Como funciona",
+    howTitle: "Como o Conform.ai resolve isso",
+    howSubtitle: "Um fluxo automatizado em quatro etapas: o que hoje leva de 30 a 60 dias de consultoria vira um diagnóstico com meta de 15 minutos.",
+
+    step1Partner: "Firecrawl",
+    step1Title: "Coleta em Markdown limpo",
+    step1Desc: "Raspa as páginas do cliente e os portais oficiais e converte HTML e PDF em Markdown sem menus, scripts e estilos. Nas páginas de clínicas, isso corta em média 88% dos tokens.",
+
+    step2Partner: "Catálogo de normas",
+    step2Title: "Seleção em dois estágios",
+    step2Desc: "Um índice leve de normas, com vigência e tags, escolhe só as resoluções que se aplicam àquele produto. Normas revogadas são descartadas antes de chegar ao modelo.",
 
     step3Partner: "Google Gemini",
-    step3Title: "3. Auditoria com Guardrails",
-    step3Desc: "Agentes especializados confrontam as evidências reais da página contra os artigos vigentes. Guardrails estritos proíbem citações a normas fora do catálogo e impedem qualquer alucinação de infrações.",
+    step3Title: "Auditoria com guardrails",
+    step3Desc: "O modelo compara a evidência da página com os artigos selecionados. Só pode citar normas do catálogo e precisa apontar o trecho que motivou cada achado.",
 
-    step4Partner: "Devin & Resend",
-    step4Title: "4. Ação e Correção Autônoma",
-    step4Desc: "A plataforma gera o Laudo em Semáforo (🟢/🟡/🔴), envia relatórios executivos para a liderança via Resend e gera Pull Requests automáticos de correção no código-fonte através do Devin.",
+    step4Partner: "Resend · Devin",
+    step4Title: "Laudo, alerta e correção",
+    step4Desc: "Gera o laudo em semáforo e envia o alerta executivo por e-mail (Resend). A abertura automática de Pull Requests de correção pelo Devin está em integração.",
 
-    // BMC Section
-    bmcTag: "Estratégia de Negócio",
-    bmcTitle: "Business Model Canvas: 'Service-as-a-Software'",
-    bmcSubtitle: "Baseado na tese da Sequoia Capital: em vez de vender apenas uma ferramenta de busca que exige advogados humanos para operar, entregamos o trabalho regulatório pronto e auditado.",
+    // BMC
+    bmcTag: "Modelo de negócio",
+    bmcTitle: "Service-as-a-Software",
+    bmcSubtitle: "Pela tese da Sequoia Capital: em vez de vender uma ferramenta que ainda exige advogados para operar, entregamos o trabalho regulatório pronto, com a decisão final nas mãos do médico ou do CTO.",
 
-    bmcCol1Badge: "Segmentos de Clientes",
-    bmcCol1Title: "Para Quem Construímos",
-    bmcCol1Desc: "Nosso mercado abrange organizações que não podem arriscar interdições ou sanções:",
-    bmcC1Item1: "HealthTechs PME (Telemedicina, Prescrição, Escribas de IA, SaMD)",
-    bmcC1Item2: "Clínicas Médicas e Consultórios Especializados com presença digital",
-    bmcC1Item3: "Hospitais e Operadoras monitorando conformidade de fornecedores",
-    bmcC1Item4: "Startups Internacionais entrando no Brasil (Cross-Border Healthcare)",
+    bmcCol1Badge: "Clientes",
+    bmcCol1Title: "Para quem construímos",
+    bmcCol1Desc: "Primeiro alvo: CTOs e Diretores Técnicos de HealthTechs de pequeno e médio porte. Em seguida:",
+    bmcC1Item1: "HealthTechs de telemedicina, prescrição digital, escriba por IA e SaMD",
+    bmcC1Item2: "Clínicas e consultórios com presença digital",
+    bmcC1Item3: "Hospitais e operadoras que avaliam fornecedores de software",
+    bmcC1Item4: "Startups estrangeiras entrando no Brasil",
 
-    bmcCol2Badge: "Proposta de Valor",
-    bmcCol2Title: "O Que Entregamos",
-    bmcCol2Desc: "Transformamos conformidade regulatória de centro de custo em diferencial competitivo:",
-    bmcC2Item1: "Diagnóstico regulatório em 15 minutos (vs. 45 dias de consultorias)",
-    bmcC2Item2: "Zero alucinação jurídica: 100% de rastreabilidade a artigos vigentes",
-    bmcC2Item3: "Adequação automatizada: Pull Requests de código prontos para aprovação",
-    bmcC2Item4: "Economia de mais de R$ 80.000/ano em honorários jurídicos para PMEs",
+    bmcCol2Badge: "Proposta de valor",
+    bmcCol2Title: "O que entregamos",
+    bmcCol2Desc: "Conformidade regulatória deixa de ser um projeto de meses:",
+    bmcC2Item1: "Diagnóstico com meta de 15 minutos, contra 30 a 60 dias de consultoria",
+    bmcC2Item2: "Cada apontamento cita o artigo vigente e a evidência encontrada",
+    bmcC2Item3: "Correção no código por Pull Request, para aprovação humana (em integração)",
+    bmcC2Item4: "Economia estimada de R$ 80 mil a R$ 160 mil por ano em monitoramento contínuo",
 
-    bmcCol3Badge: "Modelo de Receita",
-    bmcCol3Title: "Monetização Sustentável",
-    bmcCol3Desc: "Capturamos o orçamento de consultoria e engenharia através de pacotes modulares:",
-    bmcC3Item1: "Retainer de Governança Autônoma (Assinatura contínua por módulo)",
-    bmcC3Item2: "Outcome-Based Fee (Cobrança por Pull Request regulatório aceito)",
-    bmcC3Item3: "Passaporte de Entrada no Brasil (Diagnóstico prévio para HealthTechs)",
-    bmcC3Item4: "API / MCP Server para integração com Cursor, Claude e Devin",
+    bmcCol3Badge: "Receita",
+    bmcCol3Title: "Como cobramos",
+    bmcCol3Desc: "Pacotes modulares que disputam o orçamento de consultoria e de engenharia:",
+    bmcC3Item1: "Assinatura de monitoramento por nível (Radar, Governança, Autopilot)",
+    bmcC3Item2: "Taxa por resultado: cobrança por Pull Request de adequação aceito",
+    bmcC3Item3: "Diagnóstico de entrada no Brasil para HealthTechs estrangeiras",
+    bmcC3Item4: "API e servidor MCP com as normas em Markdown para agentes de terceiros",
 
-    // Tech Stack Section
-    stackTag: "Engenharia de Alta Performance",
-    stackTitle: "Stack Tecnológica & Parceiros",
-    stackSubtitle: "Arquitetura desenhada para maximizar a eficiência, robustez e auditabilidade do sistema.",
+    // Stack
+    stackTag: "Tecnologia",
+    stackTitle: "Stack e parceiros",
+    stackSubtitle: "Cada peça tem um papel no fluxo: coletar, selecionar, auditar, avisar e corrigir.",
 
-    stack1Role: "Web Data & Ingestão",
-    stack1Desc: "Raspagem de alta precisão e conversão de páginas e normativas em Markdown limpo para IA.",
+    stack1Role: "Coleta e Markdown",
+    stack1Desc: "Raspagem de páginas e normas e conversão para Markdown limpo.",
+    stack2Role: "Raciocínio regulatório",
+    stack2Desc: "Inferência com seleção de normas em dois estágios e guardrails de ética médica.",
+    stack3Role: "Engenharia autônoma (em integração)",
+    stack3Desc: "Agente que abrirá Pull Requests no GitHub para corrigir lacunas regulatórias.",
+    stack4Role: "Alertas executivos",
+    stack4Desc: "Envio de laudos e alertas para Diretores Técnicos e CTOs.",
+    stack5Role: "Backend",
+    stack5Desc: "API em TypeScript com Prisma, contrato estruturado de saída e tipagem estrita.",
+    stack6Role: "Dashboard",
+    stack6Desc: "Painel em React, Vite e Tailwind com laudos e telemetria de tokens.",
+    stack7Role: "Banco de dados",
+    stack7Desc: "Clientes, execuções de auditoria e telemetria de tokens.",
+    stack8Role: "Filas",
+    stack8Desc: "Raspagem assíncrona e auditorias em lote.",
 
-    stack2Role: "Raciocínio & RAG",
-    stack2Desc: "Motor de inferência multimodal com filtragem em 2 estágios e guardrails deontológicos.",
+    // Roadmap
+    roadTag: "Roadmap",
+    roadTitle: "Do protótipo à governança autônoma",
+    roadSubtitle: "Marcos do Hack Brasil 2026 e o que vem depois.",
 
-    stack3Role: "Engenharia Autônoma",
-    stack3Desc: "Agente de software que abre Pull Requests no GitHub para corrigir brechas regulatórias.",
+    road1Phase: "Fase 1 · M1/M2 · atual",
+    road1Title: "Prova de conceito",
+    road1Desc: "Auditoria de publicidade médica (CFM 2.336/2023), telemedicina e prescrição digital com casos sintéticos, laudo em semáforo, alertas por e-mail e catálogo de normas indexado.",
+    road2Phase: "Fase 2 · M3/M4",
+    road2Title: "Orquestração autônoma",
+    road2Desc: "Agente que gera os prompts e dirige a raspagem do Firecrawl a partir do manifesto de normas (cfmScrapingBlueprint).",
+    road3Phase: "Fase 3 · M5 · submissão",
+    road3Title: "Ciclo de correção completo",
+    road3Desc: "Integração com a API do Devin para abrir Pull Requests de adequação no GitHub, com notificação executiva via Resend.",
+    road4Phase: "Fase 4 · pós-hackathon",
+    road4Title: "Mais normas e outros países",
+    road4Desc: "Cobertura ampliada de ANVISA (SaMD, RDC 657), ANS e Ministério da Saúde, e adaptação para FDA e EMA.",
 
-    stack4Role: "Comunicação Executiva",
-    stack4Desc: "Envio de laudos e alertas críticos imediatos para Diretores Médicos e CTOs.",
+    // Equipe
+    teamTag: "Equipe",
+    teamTitle: "Quem está construindo",
+    teamSubtitle: "Dois médicos, um engenheiro de software e um especialista em governança de IA.",
 
-    stack5Role: "Backend & Contratos",
-    stack5Desc: "API robusta em TypeScript com Prisma ORM, BullMQ para filas de scraping e tipagem estrita.",
-
-    stack6Role: "Frontend da Dashboard",
-    stack6Desc: "Interface executiva em React + Vite + Tailwind CSS com tema escuro de alto contraste.",
-
-    stack7Role: "Banco de Dados",
-    stack7Desc: "Armazenamento estruturado de clientes, execuções de auditoria e telemetria de tokens.",
-
-    stack8Role: "Orquestração & Filas",
-    stack8Desc: "Processamento distribuído de scraping assíncrono e auditorias em lote.",
-
-    // Roadmap Section
-    roadTag: "Visão de Futuro",
-    roadTitle: "Nosso Roadmap de Desenvolvimento",
-    roadSubtitle: "De agentes configurados manualmente até a governança regulatória 100% autônoma e multi-jurisdição.",
-
-    road1Phase: "Fase 1 · Marco M1/M2 (Atual)",
-    road1Title: "PoC & Validação Inicial",
-    road1Desc: "Auditoria assistida de publicidade médica (CFM 2.336/2023) e telemedicina com 2 casos sintéticos, laudo em semáforo e catálogo normativo indexado.",
-
-    road2Phase: "Fase 2 · Marco M3/M4",
-    road2Title: "Orquestração Autônoma",
-    road2Desc: "Agente inteligente que gera prompts dinâmicos e direciona o scraping do Firecrawl automaticamente a partir do manifesto de diretrizes (cfmScrapingBlueprint).",
-
-    road3Phase: "Fase 3 · Marco M5 (Submissão)",
-    road3Title: "Ciclo de Correção Completo",
-    road3Desc: "Integração ponta a ponta com Devin API para abertura de PRs automáticos de adequação no GitHub e notificações executivas automatizadas via Resend.",
-
-    road4Phase: "Fase 4 · Pós-Hackathon",
-    road4Title: "Expansão e Multi-Jurisdição",
-    road4Desc: "Cobertura completa de ANVISA (SaMD RDC 657), ANS, Ministério da Saúde e adaptação para regulação médica internacional (FDA, EMA).",
-
-    // Team Section
-    teamTag: "Quem Somos",
-    teamTitle: "Equipe Multidisciplinar",
-    teamSubtitle: "A combinação perfeita de médicos desenvolvedores, liderança clínica e especialistas em engenharia de dados e governança de IA.",
-
-    member1Role: "PMO · Regulatory Data Lead · Pitch Lead",
-    member1Bio: "Médico e desenvolvedor. Lidera o gerenciamento do projeto (Google PM), a curadoria e indexação do banco de normas médicas (CFM Normas) e a comunicação do pitch.",
-
-    member2Role: "Product Owner (PO) · Clinical Product Lead",
-    member2Bio: "Médica e especialista clínica. Responsável pelo mapeamento das jornadas regulatórias, cenários clínicos de teste, requisitos de produto e critérios de aceite.",
-
+    member1Role: "PMO · Dados regulatórios · Pitch",
+    member1Bio: "Médico e desenvolvedor. Conduz a gestão do projeto (framework Google Project Management), a curadoria e indexação das normas do CFM e o pitch.",
+    member2Role: "Product Owner · Produto clínico",
+    member2Bio: "Médica. Mapeia as jornadas regulatórias, escreve os casos clínicos sintéticos de teste, os requisitos de produto e os critérios de aceite.",
     member3Role: "CTO · Tech Lead",
-    member3Bio: "Engenheiro de software e arquiteto de sistemas. Lidera a engenharia da plataforma, arquitetura de monorepo, integrações de APIs, Docker e infraestrutura de nuvem.",
+    member3Bio: "Engenheiro de software e arquiteto de sistemas. Lidera a engenharia da plataforma, o monorepo, as integrações de API e a infraestrutura em nuvem.",
+    member4Role: "Governança de IA clínica · CBA/ROI",
+    member4Bio: "Especialista em governança de IA clínica e conformidade ética. Responsável pela modelagem financeira, análise de custo-benefício e métricas de ROI.",
 
-    member4Role: "Clinical AI Governance & Compliance · CBA/ROI Lead",
-    member4Bio: "Especialista em governança clínica de IA e conformidade ética. Responsável pela modelagem financeira, análise de custo-benefício (CBA) e métricas de ROI corporativo.",
-
-    // Footer
-    footerDesc: "O primeiro agente autônomo de governança regulatória para a saúde digital. Desenvolvido para o Hack Brasil 2026.",
+    // Rodapé
+    footerDesc: "Governança regulatória contínua para a saúde digital, construída no Hack Brasil 2026.",
     footerNavTitle: "Navegação",
-    footerLegalTitle: "Conformidade & Direitos",
+    footerLegalTitle: "Projeto",
+    footerRepo: "Repositório no GitHub",
+    footerLicense: "Licença MIT",
+    footerIssues: "Issues e suporte",
+    footerTrack: "Hack Brasil 2026 · Trilha 07",
     footerRights: "© 2026 Conform.ai. Licença MIT.",
-    footerDisclaimer: "Item 6.9 do Regulamento Hack Brasil 2026: Este projeto opera exclusivamente com dados e casos 100% sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exposto."
+    footerCredit: "Feito pela equipe Conform.ai para o Hack Brasil 2026.",
+    footerDisclaimer: "Item 6.9 do Regulamento Hack Brasil 2026: somente casos sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exibido."
   },
 
   en: {
+    // Meta
+    metaTitle: "Conform.ai · Continuous regulatory audits for digital health",
+    metaDescription: "AI agents that audit digital-health websites and workflows against Brazil's active CFM, ANVISA, ANS and LGPD rules, citing the article and the evidence behind every finding.",
+
+    // Accessibility
+    skipLink: "Skip to content",
+    ariaLang: "Page language",
+    ariaMenuOpen: "Open menu",
+    ariaMenuClose: "Close menu",
+    ariaGithub: "Open the repository on GitHub",
+    ariaSimTabs: "Sample reports",
+    ariaNavMain: "Main navigation",
+
     // Nav
-    navProblem: "The Problem",
-    navSolution: "How It Works",
-    navBmc: "Business Model",
+    navProblem: "The problem",
+    navSolution: "How it works",
+    navBmc: "Business model",
     navStack: "Technology",
     navRoadmap: "Roadmap",
     navTeam: "Team",
-    navGithub: "View on GitHub",
-    badgeTrack: "Hack Brasil 2026 · Track 07: Logistics & Automation",
+    navGithub: "GitHub",
+    badgeTrack: "Hack Brasil 2026 · Track 07",
 
     // Hero
-    heroTag: "Regulatory Governance & Intelligent Automation in Healthcare",
-    heroTitle: "Continuous regulatory compliance with AI agents for digital health",
-    heroDesc: "Replacing months of manual legal consulting with continuous autonomous governance. We audit websites, terms of service, and clinical workflows against active regulations from CFM, ANVISA, ANS, and LGPD with strict anti-hallucination guardrails and over 90% token savings.",
-    ctaGithub: "Explore Code on GitHub",
-    ctaDoc: "View Architecture",
+    heroTag: "Automated regulatory governance for digital health",
+    heroTitle: "Continuous regulatory audits with AI agents for digital health",
+    heroDesc: "We monitor websites, terms of service and clinical workflows against Brazil's active CFM, ANVISA, ANS and LGPD rules. Every finding cites the article it breaks and quotes the sentence on the page that triggered it.",
+    ctaGithub: "See the code on GitHub",
+    ctaDoc: "How it works",
 
     // Stats
-    stat1Number: "94%",
-    stat1Label: "Fewer tokens consumed via Firecrawl Markdown",
+    stat1Number: "up to 94%",
+    stat1Label: "fewer tokens when regulations are read as clean Markdown instead of raw PDF or HTML",
     stat2Number: "15 min",
-    stat2Label: "Average audit time vs. 45 manual days",
-    stat3Number: "100%",
-    stat3Label: "Traceability to official cited legal articles",
+    stat2Label: "target for a full assessment, versus 30 to 60 days of manual consulting",
+    stat3Number: "Article + quote",
+    stat3Label: "in every finding: the active article and the evidence found on the page",
 
-    // Verdict Simulator
-    simTitle: "Compliance Verdict Simulator",
-    simSubtitle: "Automated real-time regulatory diagnostic",
-    tabCritical: "🔴 Critical Violation",
-    tabWarning: "🟡 Attention",
-    tabCompliant: "🟢 Compliant",
+    // Rule 6.9 band
+    synthBand: "Rule 6.9 of the official rules: this project uses synthetic cases and public regulations only. No patient data or real medical records are collected, processed or displayed.",
 
-    simNormLabel: "Applicable Standard",
-    simArticleLabel: "Article & Legal Mandate",
-    simEvidenceLabel: "Evidence Detected on Page",
-    simActionLabel: "Suggested Remediation Action",
+    // Simulator
+    simTitle: "Sample traffic-light report",
+    simSubtitle: "Synthetic cases, rules from the active catalog",
+    tabCritical: "Critical",
+    tabWarning: "Warning",
+    tabCompliant: "Compliant",
+    verdictCritical: "Critical violation",
+    verdictWarning: "Needs attention",
+    verdictCompliant: "Compliant",
 
-    // Sim Data - Critical
-    critNorm: "CFM Resolution nº 2.336/2023 (Medical Advertising)",
-    critArticle: "Article 5, Item II — Strict prohibition on guaranteed outcome promises and 'before and after' imagery lacking educational/scientific context.",
-    critEvidence: "'We guarantee 100% scar-free aesthetic recovery in just two sessions.'",
-    critAction: "Remove outcome guarantee claims and rephrase copy into strictly informative medical procedure descriptions.",
+    simNormLabel: "Applicable rule",
+    simArticleLabel: "Provision",
+    simEvidenceLabel: "Evidence found",
+    simActionLabel: "Recommended action",
 
-    // Sim Data - Warning
-    warnNorm: "CFM Resolution nº 2.454/2026 (Artificial Intelligence in Medicine)",
-    warnArticle: "Article 4 — Mandatory explicit human oversight and patient disclosure in AI-assisted diagnostic tools.",
-    warnEvidence: "Automated patient triage module functioning without upfront notice of human physician supervision.",
-    warnAction: "Add an informed consent checkbox and a human clinical review override button.",
+    critNorm: "CFM Resolution No. 2,336/2023 · Medical advertising",
+    critArticle: "Art. 11: physicians may not promise results or guarantee treatment success.",
+    critEvidence: "“We guarantee 100% scar-free aesthetic recovery in just two sessions.”",
+    critAction: "Remove the outcome guarantee and describe the procedure in informative terms, making clear that results vary from patient to patient.",
 
-    // Sim Data - Compliant
-    compNorm: "CFM Resolution nº 2.299/2021 (Electronic Prescription & Telemedicine)",
-    compArticle: "Article 2 — Digital signature validation using ICP-Brasil standard certification and clear physician registration (CRM/RQE).",
-    compEvidence: "Valid ICP-Brasil digital signature with SHA-256 hash and verified issuer physician CRM/RQE credentials.",
-    compAction: "No action needed. Clinical workflow is in full regulatory compliance.",
+    warnNorm: "CFM Resolution No. 2,314/2022 · Telemedicine",
+    warnArticle: "Art. 3: teleconsultations require the patient's informed consent.",
+    warnEvidence: "The teleconsultation flow opens the visit room without recording the patient's informed consent.",
+    warnAction: "Require informed consent before the teleconsultation starts and store it in the medical record.",
 
-    tokenHeader: "Context Efficiency (Tokens Consumed)",
-    tokenSavings: "~94% savings (Markdown vs. raw HTML/PDF)",
+    compNorm: "CFM Resolution No. 2,299/2021 · Digital prescriptions and documents",
+    compArticle: "Art. 2: electronic signature requirements for prescriptions.",
+    compEvidence: "Prescription signed with an ICP-Brasil certificate, showing the prescriber's name, CRM number and state.",
+    compAction: "No action needed. The prescription flow meets the requirement.",
 
-    // The Pain Section (For Non-Physicians)
-    painTag: "The Regulatory Reality",
-    painTitle: "Why is healthcare regulation a labyrinth?",
-    painSubtitle: "For those outside the medical field, healthcare compliance looks like an impenetrable maze. Here is how this reality impacts founders, software developers, and patient safety.",
-    
-    painCard1Title: "Personal & Ethical Liability",
-    painCard1Desc: "Unlike standard e-commerce or SaaS, in healthcare the Medical Technical Director is personally liable with their own medical license (CRM) for marketing or software errors. A simple code flaw can result in permanent license revocation.",
-    
-    painCard2Title: "Dozens of Fragmented Agencies",
-    painCard2Desc: "CFM publishes dozens of complex PDF resolutions; ANVISA regulates software as a medical device (SaMD); ANS mandates health plan rules; and LGPD (Article 11) imposes maximum penalties on sensitive health data breaches.",
-    
-    painCard3Title: "Prohibitive Cost for Startups & SMEs",
-    painCard3Desc: "Hiring specialized healthcare law firms costs between $10,000 and $25,000 per audit and takes up to 60 days. Meanwhile, using generic LLMs (like raw ChatGPT) triggers severe hallucinations, citing revoked laws and causing massive token bills.",
+    tokenHeader: "Tokens sent to the model for this page",
+    tokenSavings: "61,450 → 7,100 (−88%)",
+    tokenNote: "Raw HTML vs. clean Markdown · average from the clinic-page benchmark",
 
-    painHighlightTitle: "The Real-World Impact:",
-    painHighlightText: "A simple clinic social media ad showing 'before and after' photos without mandatory disclaimers leads to immediate Council disciplinary hearings. A telemedicine platform missing digital signature safeguards can have its prescriptions rejected across national pharmacies.",
+    // Problem
+    painTag: "The problem",
+    painTitle: "Why healthcare regulation is a maze",
+    painSubtitle: "For non-physicians: the rules are many, they are scattered across PDFs from different agencies, and a named individual is accountable for them.",
 
-    // How It Works Section
-    howTag: "Intelligent Architecture",
-    howTitle: "How Conform.ai Bridges the Gap",
-    howSubtitle: "A 4-stage automated pipeline integrating industry-leading partners to transform complex legal texts into actionable code fixes.",
+    painCard1Title: "Liability is personal",
+    painCard1Desc: "Every Brazilian healthcare company must have a physician as Medical Director. That person answers to the Medical Council, with their own license, for what the company publishes and what its software does. In the worst case, an ethics proceeding can end in license revocation.",
 
-    step1Partner: "Extraction via Firecrawl",
-    step1Title: "1. Structured Scraping",
-    step1Desc: "Our ingestion engine crawls official portals and customer assets, converting heavy HTML and PDFs into lean semantic Markdown, cutting over 90% of the token volume required for audit.",
+    painCard2Title: "Four regulators, scattered rules",
+    painCard2Desc: "The Federal Council of Medicine (CFM) publishes resolutions as PDFs; ANVISA regulates software as a medical device (SaMD); ANS regulates health plans; and the LGPD, Brazil's data protection law (Art. 11), treats health data as sensitive.",
 
-    step2Partner: "Active Norms Catalog",
-    step2Title: "2. Two-Stage Norms Resolution",
-    step2Desc: "Instead of cramming hundreds of laws into prompt context, our catalog dynamically selects with surgical precision only the active resolutions relevant to that specific product, automatically discarding repealed laws.",
+    painCard3Title: "Costly for startups, risky with generic AI",
+    painCard3Desc: "An initial regulatory audit by a specialized consultancy costs R$ 25,000 to R$ 60,000 (about US$ 5,000 to US$ 12,000) and takes 30 to 60 days. A generic chatbot without a catalog of active rules can cite repealed resolutions and burns tokens reading entire pages.",
+
+    painHighlightTitle: "In practice",
+    painHighlightText: "A clinic ad with “before and after” photos and no educational purpose breaches CFM Resolution No. 2,336/2023 and can lead to an ethics proceeding at the regional council. A digital prescription without an ICP-Brasil signature can be refused by the pharmacy.",
+
+    // How it works
+    howTag: "How it works",
+    howTitle: "How Conform.ai solves it",
+    howSubtitle: "An automated four-step workflow: what takes 30 to 60 days of consulting today becomes an assessment with a 15-minute target.",
+
+    step1Partner: "Firecrawl",
+    step1Title: "Clean Markdown ingestion",
+    step1Desc: "Scrapes customer pages and official portals and turns HTML and PDF into Markdown without menus, scripts or styling. On clinic websites this removes 88% of the tokens on average.",
+
+    step2Partner: "Rules catalog",
+    step2Title: "Two-stage rule selection",
+    step2Desc: "A lightweight index of rules, with status and tags, picks only the resolutions that apply to the product under review. Repealed rules are dropped before they reach the model.",
 
     step3Partner: "Google Gemini",
-    step3Title: "3. Auditing with Guardrails",
-    step3Desc: "Specialized agents compare verified page evidence against active articles. Strict guardrails prohibit citing laws outside the catalog and prevent any hallucinated non-compliance claims.",
+    step3Title: "Audit with guardrails",
+    step3Desc: "The model compares evidence from the page with the selected articles. It may only cite rules from the catalog and must quote the passage behind each finding.",
 
-    step4Partner: "Devin & Resend",
-    step4Title: "4. Autonomous Remediation",
-    step4Desc: "The system generates an instant Traffic Light Report (🟢/🟡/🔴), notifies company leadership via Resend, and triggers autonomous Pull Requests via Devin to patch compliance gaps directly in code.",
+    step4Partner: "Resend · Devin",
+    step4Title: "Report, alert and fix",
+    step4Desc: "Produces the traffic-light report and emails an executive alert through Resend. Automatic fix pull requests through Devin are being integrated.",
 
-    // BMC Section
-    bmcTag: "Business Strategy",
-    bmcTitle: "Business Model Canvas: 'Service-as-a-Software'",
-    bmcSubtitle: "Rooted in Sequoia Capital's thesis: instead of selling an empty search tool that still requires expensive lawyers to operate, we deliver the completed, auditable compliance work.",
+    // BMC
+    bmcTag: "Business model",
+    bmcTitle: "Service-as-a-Software",
+    bmcSubtitle: "Following Sequoia Capital's thesis: instead of selling a tool that still needs lawyers to run it, we deliver the finished compliance work, with the final call left to the physician or the CTO.",
 
-    bmcCol1Badge: "Customer Segments",
-    bmcCol1Title: "Who We Build For",
-    bmcCol1Desc: "Our market spans organizations that cannot afford regulatory shutdowns or disciplinary sanctions:",
-    bmcC1Item1: "HealthTech SMEs (Telemedicine, Digital Prescription, Clinical AI, EHR)",
-    bmcC1Item2: "Medical Practices and Specialized Clinics managing digital marketing",
-    bmcC1Item3: "Hospitals and Health Plans monitoring third-party software vendors",
-    bmcC1Item4: "International Startups expanding into Brazil (Cross-Border Healthcare)",
+    bmcCol1Badge: "Customers",
+    bmcCol1Title: "Who we build for",
+    bmcCol1Desc: "First target: CTOs and Medical Directors at small and mid-sized healthtechs. Then:",
+    bmcC1Item1: "Telemedicine, digital prescription, AI scribe and SaMD healthtechs",
+    bmcC1Item2: "Clinics and medical practices with an online presence",
+    bmcC1Item3: "Hospitals and health plans vetting software vendors",
+    bmcC1Item4: "Foreign startups entering Brazil",
 
-    bmcCol2Badge: "Value Proposition",
-    bmcCol2Title: "What We Deliver",
-    bmcCol2Desc: "Turning regulatory compliance from an expensive bottleneck into a market advantage:",
-    bmcC2Item1: "Full regulatory diagnostic in 15 minutes (vs. 45 manual days)",
-    bmcC2Item2: "Zero legal hallucinations: 100% strict traceability to active legal articles",
-    bmcC2Item3: "Autonomous remediation: Code Pull Requests ready for engineering review",
-    bmcC2Item4: "Annual savings exceeding $15,000 in routine legal retainer fees",
+    bmcCol2Badge: "Value proposition",
+    bmcCol2Title: "What we deliver",
+    bmcCol2Desc: "Regulatory compliance stops being a months-long project:",
+    bmcC2Item1: "Assessment with a 15-minute target, versus 30 to 60 days of consulting",
+    bmcC2Item2: "Every finding cites the active article and the evidence found",
+    bmcC2Item3: "Code fixes as pull requests for human approval (in integration)",
+    bmcC2Item4: "Estimated savings of R$ 80,000 to R$ 160,000 a year in ongoing monitoring",
 
-    bmcCol3Badge: "Revenue Model",
-    bmcCol3Title: "Sustainable Monetization",
-    bmcCol3Desc: "Capturing legal consulting and engineering budgets through modular service tiers:",
-    bmcC3Item1: "Autonomous Governance Retainer (Monthly subscription per monitored domain)",
-    bmcC3Item2: "Outcome-Based Fee (Pay per accepted compliance Pull Request)",
-    bmcC3Item3: "Market Entry Assessment (One-time expansion readiness report)",
-    bmcC3Item4: "API / MCP Server for native integration with Cursor, Claude, and Devin",
+    bmcCol3Badge: "Revenue",
+    bmcCol3Title: "How we charge",
+    bmcCol3Desc: "Modular plans that compete for consulting and engineering budgets:",
+    bmcC3Item1: "Monitoring subscription by tier (Radar, Governance, Autopilot)",
+    bmcC3Item2: "Outcome-based fee: charged per accepted compliance pull request",
+    bmcC3Item3: "Brazil market-entry assessment for foreign healthtechs",
+    bmcC3Item4: "API and MCP server with rules in Markdown for third-party agents",
 
-    // Tech Stack Section
-    stackTag: "High-Performance Engineering",
-    stackTitle: "Tech Stack & Strategic Partners",
-    stackSubtitle: "Architected to maximize system efficiency, robustness, and cryptographic auditability.",
+    // Stack
+    stackTag: "Technology",
+    stackTitle: "Stack and partners",
+    stackSubtitle: "Each piece has one job in the workflow: collect, select, audit, alert and fix.",
 
-    stack1Role: "Web Data & Ingestion",
-    stack1Desc: "High-fidelity scraping and conversion of government pages and PDFs into clean Markdown for AI.",
-
-    stack2Role: "Reasoning & RAG",
-    stack2Desc: "Multimodal inference engine with 2-stage filtering and strict deontological guardrails.",
-
-    stack3Role: "Autonomous Software Engineering",
-    stack3Desc: "Cognition's AI software engineer opening GitHub Pull Requests to patch regulatory flaws.",
-
-    stack4Role: "Executive Communication",
-    stack4Desc: "Transactional infrastructure delivering instant compliance reports to Medical Directors and CTOs.",
-
-    stack5Role: "Backend & Schemas",
-    stack5Desc: "Robust TypeScript API with Prisma ORM, BullMQ for job queues, and strict type safety.",
-
-    stack6Role: "Dashboard Frontend",
-    stack6Desc: "Executive React + Vite + Tailwind CSS dashboard with dark high-contrast theme.",
-
+    stack1Role: "Ingestion and Markdown",
+    stack1Desc: "Scrapes pages and regulations and converts them to clean Markdown.",
+    stack2Role: "Regulatory reasoning",
+    stack2Desc: "Inference with two-stage rule selection and medical-ethics guardrails.",
+    stack3Role: "Autonomous engineering (in integration)",
+    stack3Desc: "Agent that will open GitHub pull requests to close compliance gaps.",
+    stack4Role: "Executive alerts",
+    stack4Desc: "Sends reports and alerts to Medical Directors and CTOs.",
+    stack5Role: "Backend",
+    stack5Desc: "TypeScript API with Prisma, a structured output contract and strict typing.",
+    stack6Role: "Dashboard",
+    stack6Desc: "React, Vite and Tailwind dashboard with reports and token telemetry.",
     stack7Role: "Database",
-    stack7Desc: "Structured persistence for multi-tenant accounts, audit runs, and token consumption metrics.",
+    stack7Desc: "Customers, audit runs and token telemetry.",
+    stack8Role: "Queues",
+    stack8Desc: "Asynchronous scraping and batch audits.",
 
-    stack8Role: "Orchestration & Queues",
-    stack8Desc: "Distributed asynchronous worker processing for batch scraping and deep reasoning tasks.",
+    // Roadmap
+    roadTag: "Roadmap",
+    roadTitle: "From prototype to autonomous governance",
+    roadSubtitle: "Hack Brasil 2026 milestones and what comes next.",
 
-    // Roadmap Section
-    roadTag: "Future Vision",
-    roadTitle: "Development Roadmap",
-    roadSubtitle: "From manually tuned agent prompts to 100% autonomous, multi-jurisdiction compliance governance.",
+    road1Phase: "Phase 1 · M1/M2 · current",
+    road1Title: "Proof of concept",
+    road1Desc: "Audits of medical advertising (CFM 2,336/2023), telemedicine and digital prescriptions on synthetic cases, with the traffic-light report, email alerts and an indexed rules catalog.",
+    road2Phase: "Phase 2 · M3/M4",
+    road2Title: "Autonomous orchestration",
+    road2Desc: "An agent that writes the prompts and drives Firecrawl scraping from the rules manifest (cfmScrapingBlueprint).",
+    road3Phase: "Phase 3 · M5 · submission",
+    road3Title: "Full remediation loop",
+    road3Desc: "Devin API integration to open compliance pull requests on GitHub, with executive notifications through Resend.",
+    road4Phase: "Phase 4 · after the hackathon",
+    road4Title: "More rules, more countries",
+    road4Desc: "Wider coverage of ANVISA (SaMD, RDC 657), ANS and the Ministry of Health, and adaptation to the FDA and EMA.",
 
-    road1Phase: "Phase 1 · Milestone M1/M2 (Current)",
-    road1Title: "PoC & Core Validation",
-    road1Desc: "Assisted auditing of medical advertising (CFM 2.336/2023) and telemedicine with 2 synthetic test cases, traffic-light verdict, and indexed active catalog.",
+    // Team
+    teamTag: "Team",
+    teamTitle: "Who is building it",
+    teamSubtitle: "Two physicians, a software engineer and an AI governance specialist.",
 
-    road2Phase: "Phase 2 · Milestone M3/M4",
-    road2Title: "Autonomous Agent Orchestration",
-    road2Desc: "Intelligent agent that dynamically authors prompts and directs Firecrawl scraping runs directly from the regulatory blueprint manifesto.",
-
-    road3Phase: "Phase 3 · Milestone M5 (Submission)",
-    road3Title: "Closed-Loop Code Remediation",
-    road3Desc: "End-to-end integration with Devin API for automated remediation Pull Requests on target repos and executive alert dispatches via Resend.",
-
-    road4Phase: "Phase 4 · Post-Hackathon",
-    road4Title: "Multi-Jurisdiction Expansion",
-    road4Desc: "Full coverage of ANVISA (SaMD RDC 657), ANS, Ministry of Health, and international adaptation for global frameworks (FDA, EMA).",
-
-    // Team Section
-    teamTag: "Who We Are",
-    teamTitle: "Multidisciplinary Team",
-    teamSubtitle: "A powerhouse combination of physician-developers, clinical leaders, data engineers, and AI governance experts.",
-
-    member1Role: "PMO · Regulatory Data Lead · Pitch Lead",
-    member1Bio: "Physician and software developer. Leads project management (Google PM), regulatory norms curation & indexing (CFM Normas), and pitch communications.",
-
-    member2Role: "Product Owner (PO) · Clinical Product Lead",
-    member2Bio: "Physician and clinical product specialist. Responsible for regulatory customer journeys, clinical test cases, user stories, and acceptance criteria.",
-
+    member1Role: "PMO · Regulatory data · Pitch",
+    member1Bio: "Physician and developer. Runs project management (Google Project Management framework), curates and indexes CFM regulations, and leads the pitch.",
+    member2Role: "Product Owner · Clinical product",
+    member2Bio: "Physician. Maps regulatory journeys and writes the synthetic clinical test cases, product requirements and acceptance criteria.",
     member3Role: "CTO · Tech Lead",
-    member3Bio: "Senior software engineer and systems architect. Directs platform engineering, monorepo architecture, partner API integrations, Docker, and AWS deployment.",
-
-    member4Role: "Clinical AI Governance & Compliance · CBA/ROI Lead",
-    member4Bio: "Specialist in clinical AI governance and ethical compliance. Heads financial modeling, cost-benefit analysis (CBA), and corporate ROI metrics.",
+    member3Bio: "Software engineer and systems architect. Leads platform engineering, the monorepo, API integrations and cloud infrastructure.",
+    member4Role: "Clinical AI governance · CBA/ROI",
+    member4Bio: "Specialist in clinical AI governance and ethics compliance. Owns the financial model, cost-benefit analysis and ROI metrics.",
 
     // Footer
-    footerDesc: "The first autonomous regulatory compliance agent for digital healthcare. Built for Hack Brasil 2026.",
+    footerDesc: "Continuous regulatory governance for digital health, built at Hack Brasil 2026.",
     footerNavTitle: "Navigation",
-    footerLegalTitle: "Compliance & Rights",
-    footerRights: "© 2026 Conform.ai. Released under the MIT License.",
-    footerDisclaimer: "Hack Brasil 2026 Rule 6.9: This project operates exclusively with 100% synthetic scenarios and public regulatory norms. Zero real patient or protected health information (PHI) is ever collected, processed, or exposed."
+    footerLegalTitle: "Project",
+    footerRepo: "GitHub repository",
+    footerLicense: "MIT License",
+    footerIssues: "Issues and support",
+    footerTrack: "Hack Brasil 2026 · Track 07",
+    footerRights: "© 2026 Conform.ai. MIT License.",
+    footerCredit: "Made by the Conform.ai team for Hack Brasil 2026.",
+    footerDisclaimer: "Rule 6.9 of the Hack Brasil 2026 official rules: synthetic cases and public regulations only. No personal data or real patient records are collected, processed or displayed."
   }
 };
 

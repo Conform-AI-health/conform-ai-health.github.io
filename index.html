@@ -3,579 +3,468 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO & Open Graph Meta Tags -->
-  <title>Conform.ai — Governança Regulatória Contínua com Agentes de IA em Saúde</title>
-  <meta name="description" content="Plataforma autônoma de auditoria contínua e conformidade médica com agentes de IA. Auditoria de websites e sistemas contra resoluções do CFM, ANVISA, ANS e LGPD.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Conform.ai · Auditoria regulatória contínua em saúde</title>
+  <meta name="description" content="Agentes de IA que auditam sites e fluxos de saúde digital contra normas vigentes do CFM, ANVISA, ANS e LGPD, citando o artigo e a evidência de cada apontamento.">
   <meta name="author" content="Augusto Linhares, Mirella Batista Cruz, Frederico Da Silva, Matheus Furtado">
   <meta name="theme-color" content="#0b1329">
+  <link rel="canonical" href="https://conform-ai-health.github.io/">
 
-  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <!-- Open Graph (WhatsApp, LinkedIn, Slack) -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Conform.ai">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:url" content="https://conform-ai-health.github.io/">
-  <meta property="og:title" content="Conform.ai — Inteligência & Governança Regulatória em Saúde">
-  <meta property="og:description" content="Auditoria contínua com agentes de IA para o setor de saúde. Guardrails anti-alucinação, semáforo de conformidade e automação via Firecrawl, Gemini, Devin e Resend.">
-  <meta property="og:image" content="https://conform-ai-health.github.io/img/logo.jpg">
+  <meta property="og:title" content="Conform.ai · Auditoria regulatória contínua em saúde">
+  <meta property="og:description" content="Agentes de IA auditam sites e fluxos de saúde contra normas vigentes do CFM, ANVISA, ANS e LGPD. Laudo em semáforo com artigo e evidência. Hack Brasil 2026.">
+  <meta property="og:image" content="https://conform-ai-health.github.io/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Conform.ai: laudo em semáforo citando a Resolução CFM nº 2.336/2023, Art. 11, com a evidência encontrada na página.">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Conform.ai — Governança Regulatória Contínua em Saúde">
-  <meta name="twitter:description" content="Auditoria de conformidade médica com IA: -90% em tokens, guardrails deontológicos e correção autônoma de código.">
-  <meta name="twitter:image" content="https://conform-ai-health.github.io/img/logo.jpg">
+  <meta name="twitter:title" content="Conform.ai · Auditoria regulatória contínua em saúde">
+  <meta name="twitter:description" content="Laudo em semáforo com artigo e evidência, contra normas vigentes do CFM, ANVISA, ANS e LGPD.">
+  <meta name="twitter:image" content="https://conform-ai-health.github.io/img/og-image.png">
+  <meta name="twitter:image:alt" content="Conform.ai: laudo em semáforo citando a Resolução CFM nº 2.336/2023, Art. 11.">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="favicon.ico">
+  <!-- Ícones -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-  <!-- Google Fonts: Inter -->
+  <!-- Inter (pesos usados) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Conform.ai",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://conform-ai-health.github.io/",
+    "description": "Auditoria regulatória contínua com agentes de IA para a saúde digital (CFM, ANVISA, ANS, LGPD).",
+    "inLanguage": ["pt-BR", "en"],
+    "license": "https://opensource.org/licenses/MIT",
+    "codeRepository": "https://github.com/Conform-AI-health/conform-ai-health"
+  }
+  </script>
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo" data-i18n="skipLink">Pular para o conteúdo</a>
 
-  <!-- Ambient Glow Background -->
-  <div class="bg-glow-radial"></div>
+  <div class="bg-glow-radial" aria-hidden="true"></div>
 
-  <!-- Header / Navbar -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-link">
-        <img src="img/logo.jpg" alt="Conform.ai Logo" class="brand-logo">
+        <img src="img/logo.jpg" alt="" class="brand-logo" width="40" height="40">
         <span class="brand-title">Conform<span class="text-gradient-brand">.ai</span></span>
-        <span class="brand-badge" data-i18n="badgeTrack">Hack Brasil 2026 · Trilha 07: Logística & Automação</span>
+        <span class="brand-badge" data-i18n="badgeTrack">Hack Brasil 2026 · Trilha 07</span>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav>
+      <nav aria-label="Navegação principal" data-i18n-aria="ariaNavMain">
         <ul class="nav-links">
-          <li><a href="#problema" data-i18n="navProblem">O Problema</a></li>
-          <li><a href="#como-funciona" data-i18n="navSolution">Como Funciona</a></li>
-          <li><a href="#modelo-de-negocio" data-i18n="navBmc">Modelo de Negócio</a></li>
+          <li><a href="#problema" data-i18n="navProblem">O problema</a></li>
+          <li><a href="#como-funciona" data-i18n="navSolution">Como funciona</a></li>
+          <li><a href="#modelo-de-negocio" data-i18n="navBmc">Modelo de negócio</a></li>
           <li><a href="#tecnologia" data-i18n="navStack">Tecnologia</a></li>
           <li><a href="#roadmap" data-i18n="navRoadmap">Roadmap</a></li>
           <li><a href="#equipe" data-i18n="navTeam">Equipe</a></li>
         </ul>
       </nav>
 
-      <!-- Language Switcher & GitHub CTA -->
       <div class="nav-actions">
-        <div class="lang-switcher" aria-label="Seletor de idioma">
-          <button id="lang-pt" class="lang-btn active">PT</button>
-          <button id="lang-en" class="lang-btn">EN</button>
+        <div class="lang-switcher" role="group" aria-label="Idioma da página" data-i18n-aria="ariaLang">
+          <button type="button" id="lang-pt" class="lang-btn active" aria-pressed="true" lang="pt-BR">PT</button>
+          <button type="button" id="lang-en" class="lang-btn" aria-pressed="false" lang="en">EN</button>
         </div>
 
-        <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.825rem;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span data-i18n="navGithub">Ver no GitHub</span>
+        <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-nav" aria-label="Abrir o repositório no GitHub" data-i18n-aria="ariaGithub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="btn-nav-label" data-i18n="navGithub">GitHub</span>
         </a>
 
-        <!-- Mobile Menu Hamburger Button -->
-        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="mobile-menu">
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Menu" hidden>
       <ul>
-        <li><a href="#problema" data-i18n="navProblem">O Problema</a></li>
-        <li><a href="#como-funciona" data-i18n="navSolution">Como Funciona</a></li>
-        <li><a href="#modelo-de-negocio" data-i18n="navBmc">Modelo de Negócio</a></li>
+        <li><a href="#problema" data-i18n="navProblem">O problema</a></li>
+        <li><a href="#como-funciona" data-i18n="navSolution">Como funciona</a></li>
+        <li><a href="#modelo-de-negocio" data-i18n="navBmc">Modelo de negócio</a></li>
         <li><a href="#tecnologia" data-i18n="navStack">Tecnologia</a></li>
         <li><a href="#roadmap" data-i18n="navRoadmap">Roadmap</a></li>
         <li><a href="#equipe" data-i18n="navTeam">Equipe</a></li>
+        <li class="mobile-menu-github"><a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" data-i18n="footerRepo">Repositório no GitHub</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
+  <main id="conteudo" tabindex="-1">
+
   <section class="hero-section">
     <div class="container hero-grid">
-      <div>
-        <div class="hero-tag">
-          <span>⚡</span>
-          <span data-i18n="heroTag">Governança Regulatória & Automação Inteligente em Saúde</span>
-        </div>
-        <h1 class="hero-title text-gradient" data-i18n="heroTitle">
-          Auditoria regulatória contínua com agentes de IA para a saúde digital
-        </h1>
-        <p class="hero-desc" data-i18n="heroDesc">
-          Substituímos meses de consultoria jurídica manual por governança autônoma em tempo real. Auditamos websites, termos de uso e fluxos clínicos contra as resoluções vigentes do CFM, ANVISA, ANS e LGPD com guardrails anti-alucinação e redução de mais de 90% no consumo de tokens.
-        </p>
+      <div class="hero-copy">
+        <p class="hero-tag" data-i18n="heroTag">Governança regulatória automatizada para a saúde digital</p>
+        <h1 class="hero-title" data-i18n="heroTitle">Auditoria regulatória contínua com agentes de IA para a saúde digital</h1>
+        <p class="hero-desc" data-i18n="heroDesc">Monitoramos sites, termos de uso e fluxos clínicos contra as normas vigentes do CFM, ANVISA, ANS e LGPD. Cada apontamento vem com o artigo citado e a frase da página que o motivou.</p>
         <div class="hero-cta">
           <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            <span data-i18n="ctaGithub">Explorar Código no GitHub</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span data-i18n="ctaGithub">Ver o código no GitHub</span>
           </a>
-          <a href="#como-funciona" class="btn btn-secondary" data-i18n="ctaDoc">Conhecer a Arquitetura</a>
-        </div>
-
-        <!-- Live Metrics / Stats -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <h4 data-i18n="stat1Number">94%</h4>
-            <p data-i18n="stat1Label">Menos consumo de tokens via Firecrawl Markdown</p>
-          </div>
-          <div class="stat-item">
-            <h4 data-i18n="stat2Number">15 min</h4>
-            <p data-i18n="stat2Label">Tempo médio de diagnóstico vs. 45 dias manuais</p>
-          </div>
-          <div class="stat-item">
-            <h4 data-i18n="stat3Number">100%</h4>
-            <p data-i18n="stat3Label">Rastreabilidade a artigos e normas vigentes</p>
-          </div>
+          <a href="#como-funciona" class="btn btn-secondary" data-i18n="ctaDoc">Como funciona</a>
         </div>
       </div>
 
-      <!-- Right Column: Interactive Compliance Verdict Simulator -->
-      <div>
+      <!-- Simulador -->
+      <div class="hero-sim">
         <div class="verdict-card">
           <div class="verdict-header">
             <div>
-              <div style="font-size: 0.95rem; font-weight: 700;" data-i18n="simTitle">Simulador de Laudo em Semáforo</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="simSubtitle">Diagnóstico regulatório automatizado em tempo real</div>
+              <h2 class="verdict-title" data-i18n="simTitle">Exemplo de laudo em semáforo</h2>
+              <p class="verdict-subtitle" data-i18n="simSubtitle">Casos sintéticos, normas do catálogo vigente</p>
             </div>
             <div id="sim-verdict-badge" class="verdict-badge red">
-              <span>●</span> <span data-i18n="tabCritical">🔴 Violação Crítica</span>
+              <span class="verdict-dot" aria-hidden="true"></span>
+              <span id="sim-verdict-text">Violação crítica</span>
             </div>
           </div>
 
-          <!-- Tab Selector -->
-          <div class="verdict-tabs">
-            <button id="tab-critical" class="verdict-tab-btn active" data-i18n="tabCritical">🔴 Violação Crítica</button>
-            <button id="tab-warning" class="verdict-tab-btn" data-i18n="tabWarning">🟡 Atenção</button>
-            <button id="tab-compliant" class="verdict-tab-btn" data-i18n="tabCompliant">🟢 Conforme</button>
+          <div class="verdict-tabs" role="tablist" aria-label="Exemplos de laudo" data-i18n-aria="ariaSimTabs">
+            <button type="button" id="tab-critical" class="verdict-tab-btn active" role="tab" aria-selected="true" aria-controls="sim-panel" data-status="critical"><span aria-hidden="true">🔴</span> <span data-i18n="tabCritical">Crítico</span></button>
+            <button type="button" id="tab-warning" class="verdict-tab-btn" role="tab" aria-selected="false" aria-controls="sim-panel" tabindex="-1" data-status="warning"><span aria-hidden="true">🟡</span> <span data-i18n="tabWarning">Atenção</span></button>
+            <button type="button" id="tab-compliant" class="verdict-tab-btn" role="tab" aria-selected="false" aria-controls="sim-panel" tabindex="-1" data-status="compliant"><span aria-hidden="true">🟢</span> <span data-i18n="tabCompliant">Conforme</span></button>
           </div>
 
-          <!-- Dynamic Verdict Body -->
-          <div class="verdict-body">
+          <div id="sim-panel" class="verdict-body" role="tabpanel" aria-labelledby="tab-critical" aria-live="polite">
             <div class="verdict-row">
-              <div class="verdict-label" data-i18n="simNormLabel">Norma Aplicável</div>
-              <div id="sim-norm" class="verdict-text" style="font-weight: 600; color: #38bdf8;">
-                Resolução CFM nº 2.336/2023 (Publicidade Médica)
-              </div>
+              <div class="verdict-label" data-i18n="simNormLabel">Norma aplicável</div>
+              <div id="sim-norm" class="verdict-text verdict-norm">Resolução CFM nº 2.336/2023 · Publicidade médica</div>
             </div>
-
             <div class="verdict-row">
-              <div class="verdict-label" data-i18n="simArticleLabel">Artigo & Dispositivo Legal</div>
-              <div id="sim-article" class="verdict-text">
-                Artigo 5º, Inciso II — Vedação expressa a promessa de resultado e "antes e depois" sem caráter educativo/científico.
-              </div>
+              <div class="verdict-label" data-i18n="simArticleLabel">Dispositivo</div>
+              <div id="sim-article" class="verdict-text">Art. 11: vedação à promessa de resultado ou garantia de êxito de tratamento.</div>
             </div>
-
             <div class="verdict-row">
-              <div class="verdict-label" data-i18n="simEvidenceLabel">Evidência Detectada na Página</div>
-              <div id="sim-evidence" class="verdict-text" style="font-style: italic; color: #f87171;">
-                "Garantimos 100% de recuperação estética sem cicatrizes em apenas 2 sessões."
-              </div>
+              <div class="verdict-label" data-i18n="simEvidenceLabel">Evidência encontrada</div>
+              <div id="sim-evidence" class="verdict-text verdict-evidence">“Garantimos 100% de recuperação estética sem cicatrizes em apenas 2 sessões.”</div>
             </div>
-
             <div class="verdict-row">
-              <div class="verdict-label" data-i18n="simActionLabel">Ação de Remediação Sugerida</div>
-              <div id="sim-action" class="verdict-text" style="color: #4ade80;">
-                Remover a alegação de garantia de resultado e adequar o texto para caráter informativo de procedimentos médicos.
-              </div>
+              <div class="verdict-label" data-i18n="simActionLabel">Ação recomendada</div>
+              <div id="sim-action" class="verdict-text verdict-action">Retirar a garantia de resultado e descrever o procedimento de forma informativa, deixando claro que a evolução varia de paciente para paciente.</div>
             </div>
           </div>
 
-          <!-- Token Efficiency Meter -->
           <div class="token-meter-container">
             <div class="token-meter-header">
-              <span data-i18n="tokenHeader">Eficiência de Contexto (Tokens Consumidos)</span>
-              <span class="token-saved" data-i18n="tokenSavings">Economia de ~94% (Markdown vs. HTML/PDF bruto)</span>
+              <span data-i18n="tokenHeader">Tokens enviados ao modelo nesta página</span>
+              <span class="token-saved" data-i18n="tokenSavings">61.450 → 7.100 (−88%)</span>
             </div>
-            <div class="token-bar">
+            <div class="token-bar" aria-hidden="true">
               <div class="token-bar-fill"></div>
             </div>
+            <p class="token-note" data-i18n="tokenNote">HTML bruto vs. Markdown limpo · média do benchmark de páginas de clínicas</p>
           </div>
         </div>
       </div>
+
+      <dl class="hero-stats">
+        <div class="stat-item">
+          <dt class="stat-number" data-i18n="stat1Number">até 94%</dt>
+          <dd data-i18n="stat1Label">menos tokens ao ler as normas em Markdown limpo, em vez do PDF ou HTML bruto</dd>
+        </div>
+        <div class="stat-item">
+          <dt class="stat-number" data-i18n="stat2Number">15 min</dt>
+          <dd data-i18n="stat2Label">meta do diagnóstico completo, contra 30 a 60 dias de consultoria manual</dd>
+        </div>
+        <div class="stat-item">
+          <dt class="stat-number" data-i18n="stat3Number">Art. + trecho</dt>
+          <dd data-i18n="stat3Label">em cada apontamento: o artigo vigente e a evidência encontrada na página</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
-  <!-- Section: The Problem / Para Não-Médicos -->
+  <!-- Item 6.9 -->
+  <div class="synth-band">
+    <div class="container synth-band-inner">
+      <svg class="synth-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <p data-i18n="synthBand">Item 6.9 do Regulamento: este projeto usa somente casos sintéticos e normas públicas. Nenhum dado de paciente ou prontuário real é coletado, processado ou exibido.</p>
+    </div>
+  </div>
+
   <section id="problema" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="painTag">A Realidade Regulatória</span>
-        <h2 class="section-title text-gradient" data-i18n="painTitle">Por que a regulação em saúde é um labirinto?</h2>
-        <p class="section-subtitle" data-i18n="painSubtitle">
-          Para quem não é da área médica, entender as regras da saúde parece lidar com um código impenetrável. Veja como esse problema afeta diretamente fundadores, desenvolvedores e pacientes.
-        </p>
+        <p class="section-tag" data-i18n="painTag">O problema</p>
+        <h2 class="section-title" data-i18n="painTitle">Por que a regulação em saúde é um labirinto</h2>
+        <p class="section-subtitle" data-i18n="painSubtitle">Para quem não é da área médica: as regras são muitas, estão espalhadas em PDFs de órgãos diferentes e quem responde por elas é uma pessoa física.</p>
       </div>
 
       <div class="pain-grid">
         <div class="card">
-          <div class="card-icon red">⚖️</div>
-          <h3 class="card-title" data-i18n="painCard1Title">Responsabilidade Pessoal e Ética</h3>
-          <p class="card-desc" data-i18n="painCard1Desc">
-            Diferente de um e-commerce ou SaaS comum, na saúde o Diretor Técnico responde com o próprio registro profissional (CRM) por falhas no marketing ou no código do produto. Uma falha de software pode custar a cassação do diploma médico.
-          </p>
+          <div class="card-icon red" aria-hidden="true">⚖️</div>
+          <h3 class="card-title" data-i18n="painCard1Title">A responsabilidade é pessoal</h3>
+          <p class="card-desc" data-i18n="painCard1Desc">Toda empresa de saúde tem um Diretor Técnico médico. Ele responde eticamente, com o próprio registro no CRM, pelo que a empresa publica e pelo que o software faz. No limite, um processo ético pode levar à cassação do registro profissional.</p>
         </div>
-
         <div class="card">
-          <div class="card-icon blue">📜</div>
-          <h3 class="card-title" data-i18n="painCard2Title">Emaranhado de Órgãos e Normas Dispersas</h3>
-          <p class="card-desc" data-i18n="painCard2Desc">
-            O CFM publica dezenas de resoluções em PDFs complexos; a ANVISA regula softwares como dispositivos médicos (SaMD); a ANS dita regras de cobertura; e a LGPD (Art. 11) impõe rigor máximo sobre dados sensíveis de saúde.
-          </p>
+          <div class="card-icon blue" aria-hidden="true">📜</div>
+          <h3 class="card-title" data-i18n="painCard2Title">Quatro órgãos, normas dispersas</h3>
+          <p class="card-desc" data-i18n="painCard2Desc">O CFM publica resoluções em PDF; a ANVISA regula software como dispositivo médico (SaMD); a ANS regula os planos de saúde; e a LGPD (Art. 11) trata dados de saúde como dados sensíveis.</p>
         </div>
-
         <div class="card">
-          <div class="card-icon amber">💸</div>
-          <h3 class="card-title" data-i18n="painCard3Title">O Custo Inviável para PMEs e Startups</h3>
-          <p class="card-desc" data-i18n="painCard3Desc">
-            Contratar bancas de advocacia especializadas custa de R$ 50.000 a R$ 100.000 e leva até 60 dias por parecer. Enquanto isso, usar IAs genéricas (como ChatGPT solto) gera alucinações graves, citando normas já revogadas e gerando faturas proibitivas de tokens.
-          </p>
+          <div class="card-icon amber" aria-hidden="true">💸</div>
+          <h3 class="card-title" data-i18n="painCard3Title">Caro para PMEs, arriscado com IA genérica</h3>
+          <p class="card-desc" data-i18n="painCard3Desc">Uma auditoria regulatória inicial com consultoria especializada custa de R$ 25 mil a R$ 60 mil e leva de 30 a 60 dias. Um chatbot genérico, sem catálogo de normas vigentes, pode citar resoluções revogadas e gasta tokens lendo páginas inteiras.</p>
         </div>
       </div>
 
-      <!-- Real-world Impact Highlight Box -->
       <div class="pain-highlight-box">
-        <div class="pain-badge-icon">🚨</div>
+        <div class="pain-badge-icon" aria-hidden="true">🚨</div>
         <div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: #ffffff;" data-i18n="painHighlightTitle">O Impacto na Prática:</h4>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;" data-i18n="painHighlightText">
-            Um simples post de clínica anunciando "antes e depois" sem os termos exigidos pela Resolução CFM nº 2.336/2023 gera denúncia imediata no CRM. Uma plataforma de telemedicina sem a trava certa de assinatura digital pode ter suas receitas médicas bloqueadas em farmácias de todo o Brasil.
-          </p>
+          <h3 class="pain-highlight-title" data-i18n="painHighlightTitle">Na prática</h3>
+          <p class="pain-highlight-text" data-i18n="painHighlightText">Um anúncio de clínica com fotos de “antes e depois” sem finalidade educativa contraria a Resolução CFM nº 2.336/2023 e pode virar processo ético no CRM. Uma prescrição digital sem assinatura ICP-Brasil pode ser recusada pela farmácia.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: How It Works -->
   <section id="como-funciona" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="howTag">Arquitetura Inteligente</span>
-        <h2 class="section-title text-gradient" data-i18n="howTitle">Como o Conform.ai resolve esse abismo</h2>
-        <p class="section-subtitle" data-i18n="howSubtitle">
-          Um fluxo em 4 estágios que integra os melhores parceiros tecnológicos do mercado para transformar regulação em código acionável.
-        </p>
+        <p class="section-tag" data-i18n="howTag">Como funciona</p>
+        <h2 class="section-title" data-i18n="howTitle">Como o Conform.ai resolve isso</h2>
+        <p class="section-subtitle" data-i18n="howSubtitle">Um fluxo automatizado em quatro etapas: o que hoje leva de 30 a 60 dias de consultoria vira um diagnóstico com meta de 15 minutos.</p>
       </div>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-partner" data-i18n="step1Partner">Extração com Firecrawl</div>
-          <h3 class="step-title" data-i18n="step1Title">1. Scraping Estruturado</h3>
-          <p class="card-desc" data-i18n="step1Desc">
-            Nosso motor de ingestão rastreia portais oficiais e páginas de clientes, convertendo HTMLs pesados e PDFs em Markdown semântico enxuto, reduzindo em mais de 90% os tokens necessários para auditoria.
-          </p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-partner" data-i18n="step2Partner">Catálogo & Diretriz</div>
-          <h3 class="step-title" data-i18n="step2Title">2. Resolução em 2 Estágios</h3>
-          <p class="card-desc" data-i18n="step2Desc">
-            Em vez de injetar centenas de normas de uma vez no modelo, um catálogo dinâmico de normas vigentes seleciona com precisão cirúrgica apenas as resoluções ativas pertinentes àquele produto, descartando normas revogadas.
-          </p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">03</div>
+      <ol class="steps-grid">
+        <li class="step-card">
+          <span class="step-number" aria-hidden="true">01</span>
+          <div class="step-partner" data-i18n="step1Partner">Firecrawl</div>
+          <h3 class="step-title" data-i18n="step1Title">Coleta em Markdown limpo</h3>
+          <p class="card-desc" data-i18n="step1Desc">Raspa as páginas do cliente e os portais oficiais e converte HTML e PDF em Markdown sem menus, scripts e estilos. Nas páginas de clínicas, isso corta em média 88% dos tokens.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-number" aria-hidden="true">02</span>
+          <div class="step-partner" data-i18n="step2Partner">Catálogo de normas</div>
+          <h3 class="step-title" data-i18n="step2Title">Seleção em dois estágios</h3>
+          <p class="card-desc" data-i18n="step2Desc">Um índice leve de normas, com vigência e tags, escolhe só as resoluções que se aplicam àquele produto. Normas revogadas são descartadas antes de chegar ao modelo.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-number" aria-hidden="true">03</span>
           <div class="step-partner" data-i18n="step3Partner">Google Gemini</div>
-          <h3 class="step-title" data-i18n="step3Title">3. Auditoria com Guardrails</h3>
-          <p class="card-desc" data-i18n="step3Desc">
-            Agentes especializados confrontam as evidências reais da página contra os artigos vigentes. Guardrails estritos proíbem citações a normas fora do catálogo e impedem qualquer alucinação de infrações.
-          </p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">04</div>
-          <div class="step-partner" data-i18n="step4Partner">Devin & Resend</div>
-          <h3 class="step-title" data-i18n="step4Title">4. Ação e Correção Autônoma</h3>
-          <p class="card-desc" data-i18n="step4Desc">
-            A plataforma gera o Laudo em Semáforo (🟢/🟡/🔴), envia relatórios executivos para a liderança via Resend e gera Pull Requests automáticos de correção no código-fonte através do Devin.
-          </p>
-        </div>
-      </div>
+          <h3 class="step-title" data-i18n="step3Title">Auditoria com guardrails</h3>
+          <p class="card-desc" data-i18n="step3Desc">O modelo compara a evidência da página com os artigos selecionados. Só pode citar normas do catálogo e precisa apontar o trecho que motivou cada achado.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-number" aria-hidden="true">04</span>
+          <div class="step-partner" data-i18n="step4Partner">Resend · Devin</div>
+          <h3 class="step-title" data-i18n="step4Title">Laudo, alerta e correção</h3>
+          <p class="card-desc" data-i18n="step4Desc">Gera o laudo em semáforo e envia o alerta executivo por e-mail (Resend). A abertura automática de Pull Requests de correção pelo Devin está em integração.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- Section: Business Model Canvas -->
   <section id="modelo-de-negocio" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="bmcTag">Estratégia de Negócio</span>
-        <h2 class="section-title text-gradient" data-i18n="bmcTitle">Business Model Canvas: "Service-as-a-Software"</h2>
-        <p class="section-subtitle" data-i18n="bmcSubtitle">
-          Baseado na tese da Sequoia Capital: em vez de vender apenas uma ferramenta de busca que exige advogados humanos para operar, entregamos o trabalho regulatório pronto e auditado.
-        </p>
+        <p class="section-tag" data-i18n="bmcTag">Modelo de negócio</p>
+        <h2 class="section-title" data-i18n="bmcTitle">Service-as-a-Software</h2>
+        <p class="section-subtitle" data-i18n="bmcSubtitle">Pela tese da Sequoia Capital: em vez de vender uma ferramenta que ainda exige advogados para operar, entregamos o trabalho regulatório pronto, com a decisão final nas mãos do médico ou do CTO.</p>
       </div>
 
       <div class="bmc-grid">
         <div class="bmc-card">
-          <span class="bmc-badge" data-i18n="bmcCol1Badge">Segmentos de Clientes</span>
-          <h3 class="card-title" data-i18n="bmcCol1Title">Para Quem Construímos</h3>
-          <p class="card-desc" data-i18n="bmcCol1Desc">
-            Nosso mercado abrange organizações que não podem arriscar interdições ou sanções:
-          </p>
+          <span class="bmc-badge" data-i18n="bmcCol1Badge">Clientes</span>
+          <h3 class="card-title" data-i18n="bmcCol1Title">Para quem construímos</h3>
+          <p class="card-desc" data-i18n="bmcCol1Desc">Primeiro alvo: CTOs e Diretores Técnicos de HealthTechs de pequeno e médio porte. Em seguida:</p>
           <ul class="bmc-list">
-            <li data-i18n="bmcC1Item1">HealthTechs PME (Telemedicina, Prescrição, Escribas de IA, SaMD)</li>
-            <li data-i18n="bmcC1Item2">Clínicas Médicas e Consultórios Especializados com presença digital</li>
-            <li data-i18n="bmcC1Item3">Hospitais e Operadoras monitorando conformidade de fornecedores</li>
-            <li data-i18n="bmcC1Item4">Startups Internacionais entrando no Brasil (Cross-Border Healthcare)</li>
+            <li data-i18n="bmcC1Item1">HealthTechs de telemedicina, prescrição digital, escriba por IA e SaMD</li>
+            <li data-i18n="bmcC1Item2">Clínicas e consultórios com presença digital</li>
+            <li data-i18n="bmcC1Item3">Hospitais e operadoras que avaliam fornecedores de software</li>
+            <li data-i18n="bmcC1Item4">Startups estrangeiras entrando no Brasil</li>
           </ul>
         </div>
-
         <div class="bmc-card">
-          <span class="bmc-badge" data-i18n="bmcCol2Badge">Proposta de Valor</span>
-          <h3 class="card-title" data-i18n="bmcCol2Title">O Que Entregamos</h3>
-          <p class="card-desc" data-i18n="bmcCol2Desc">
-            Transformamos conformidade regulatória de centro de custo em diferencial competitivo:
-          </p>
+          <span class="bmc-badge" data-i18n="bmcCol2Badge">Proposta de valor</span>
+          <h3 class="card-title" data-i18n="bmcCol2Title">O que entregamos</h3>
+          <p class="card-desc" data-i18n="bmcCol2Desc">Conformidade regulatória deixa de ser um projeto de meses:</p>
           <ul class="bmc-list">
-            <li data-i18n="bmcC2Item1">Diagnóstico regulatório em 15 minutos (vs. 45 dias de consultorias)</li>
-            <li data-i18n="bmcC2Item2">Zero alucinação jurídica: 100% de rastreabilidade a artigos vigentes</li>
-            <li data-i18n="bmcC2Item3">Adequação automatizada: Pull Requests de código prontos para aprovação</li>
-            <li data-i18n="bmcC2Item4">Economia de mais de R$ 80.000/ano em honorários jurídicos para PMEs</li>
+            <li data-i18n="bmcC2Item1">Diagnóstico com meta de 15 minutos, contra 30 a 60 dias de consultoria</li>
+            <li data-i18n="bmcC2Item2">Cada apontamento cita o artigo vigente e a evidência encontrada</li>
+            <li data-i18n="bmcC2Item3">Correção no código por Pull Request, para aprovação humana (em integração)</li>
+            <li data-i18n="bmcC2Item4">Economia estimada de R$ 80 mil a R$ 160 mil por ano em monitoramento contínuo</li>
           </ul>
         </div>
-
         <div class="bmc-card">
-          <span class="bmc-badge" data-i18n="bmcCol3Badge">Modelo de Receita</span>
-          <h3 class="card-title" data-i18n="bmcCol3Title">Monetização Sustentável</h3>
-          <p class="card-desc" data-i18n="bmcCol3Desc">
-            Capturamos o orçamento de consultoria e engenharia através de pacotes modulares:
-          </p>
+          <span class="bmc-badge" data-i18n="bmcCol3Badge">Receita</span>
+          <h3 class="card-title" data-i18n="bmcCol3Title">Como cobramos</h3>
+          <p class="card-desc" data-i18n="bmcCol3Desc">Pacotes modulares que disputam o orçamento de consultoria e de engenharia:</p>
           <ul class="bmc-list">
-            <li data-i18n="bmcC3Item1">Retainer de Governança Autônoma (Assinatura contínua por módulo)</li>
-            <li data-i18n="bmcC3Item2">Outcome-Based Fee (Cobrança por Pull Request regulatório aceito)</li>
-            <li data-i18n="bmcC3Item3">Passaporte de Entrada no Brasil (Diagnóstico prévio para HealthTechs)</li>
-            <li data-i18n="bmcC3Item4">API / MCP Server para integração com Cursor, Claude e Devin</li>
+            <li data-i18n="bmcC3Item1">Assinatura de monitoramento por nível (Radar, Governança, Autopilot)</li>
+            <li data-i18n="bmcC3Item2">Taxa por resultado: cobrança por Pull Request de adequação aceito</li>
+            <li data-i18n="bmcC3Item3">Diagnóstico de entrada no Brasil para HealthTechs estrangeiras</li>
+            <li data-i18n="bmcC3Item4">API e servidor MCP com as normas em Markdown para agentes de terceiros</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Tech Stack -->
   <section id="tecnologia" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="stackTag">Engenharia de Alta Performance</span>
-        <h2 class="section-title text-gradient" data-i18n="stackTitle">Stack Tecnológica & Parceiros</h2>
-        <p class="section-subtitle" data-i18n="stackSubtitle">
-          Arquitetura desenhada para maximizar a eficiência, robustez e auditabilidade do sistema.
-        </p>
+        <p class="section-tag" data-i18n="stackTag">Tecnologia</p>
+        <h2 class="section-title" data-i18n="stackTitle">Stack e parceiros</h2>
+        <p class="section-subtitle" data-i18n="stackSubtitle">Cada peça tem um papel no fluxo: coletar, selecionar, auditar, avisar e corrigir.</p>
       </div>
 
       <div class="stack-grid">
-        <div class="stack-card">
-          <div class="stack-icon">🔥</div>
-          <div class="stack-name">Firecrawl</div>
-          <div class="stack-role" data-i18n="stack1Role">Web Data & Ingestão</div>
-          <p class="stack-desc" data-i18n="stack1Desc">Raspagem de alta precisão e conversão de páginas e normativas em Markdown limpo para IA.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">🧠</div>
-          <div class="stack-name">Google Gemini</div>
-          <div class="stack-role" data-i18n="stack2Role">Raciocínio & RAG</div>
-          <p class="stack-desc" data-i18n="stack2Desc">Motor de inferência multimodal com filtragem em 2 estágios e guardrails deontológicos.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">🤖</div>
-          <div class="stack-name">Devin (Cognition)</div>
-          <div class="stack-role" data-i18n="stack3Role">Engenharia Autônoma</div>
-          <p class="stack-desc" data-i18n="stack3Desc">Agente de software que abre Pull Requests no GitHub para corrigir brechas regulatórias.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">✉️</div>
-          <div class="stack-name">Resend</div>
-          <div class="stack-role" data-i18n="stack4Role">Comunicação Executiva</div>
-          <p class="stack-desc" data-i18n="stack4Desc">Envio de laudos e alertas críticos imediatos para Diretores Médicos e CTOs.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">⚡</div>
-          <div class="stack-name">Node.js & TypeScript</div>
-          <div class="stack-role" data-i18n="stack5Role">Backend & Contratos</div>
-          <p class="stack-desc" data-i18n="stack5Desc">API robusta em TypeScript com Prisma ORM, BullMQ para filas de scraping e tipagem estrita.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">⚛️</div>
-          <div class="stack-name">React + Tailwind</div>
-          <div class="stack-role" data-i18n="stack6Role">Frontend da Dashboard</div>
-          <p class="stack-desc" data-i18n="stack6Desc">Interface executiva em React + Vite + Tailwind CSS com tema escuro de alto contraste.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">🍃</div>
-          <div class="stack-name">MongoDB & Prisma</div>
-          <div class="stack-role" data-i18n="stack7Role">Banco de Dados</div>
-          <p class="stack-desc" data-i18n="stack7Desc">Armazenamento estruturado de clientes, execuções de auditoria e telemetria de tokens.</p>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">🔴</div>
-          <div class="stack-name">BullMQ & Redis</div>
-          <div class="stack-role" data-i18n="stack8Role">Orquestração & Filas</div>
-          <p class="stack-desc" data-i18n="stack8Desc">Processamento distribuído de scraping assíncrono e auditorias em lote.</p>
-        </div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">🔥</div><h3 class="stack-name">Firecrawl</h3><div class="stack-role" data-i18n="stack1Role">Coleta e Markdown</div><p class="stack-desc" data-i18n="stack1Desc">Raspagem de páginas e normas e conversão para Markdown limpo.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">🧠</div><h3 class="stack-name">Google Gemini</h3><div class="stack-role" data-i18n="stack2Role">Raciocínio regulatório</div><p class="stack-desc" data-i18n="stack2Desc">Inferência com seleção de normas em dois estágios e guardrails de ética médica.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">🤖</div><h3 class="stack-name">Devin (Cognition)</h3><div class="stack-role" data-i18n="stack3Role">Engenharia autônoma (em integração)</div><p class="stack-desc" data-i18n="stack3Desc">Agente que abrirá Pull Requests no GitHub para corrigir lacunas regulatórias.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">✉️</div><h3 class="stack-name">Resend</h3><div class="stack-role" data-i18n="stack4Role">Alertas executivos</div><p class="stack-desc" data-i18n="stack4Desc">Envio de laudos e alertas para Diretores Técnicos e CTOs.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">⚡</div><h3 class="stack-name">Node.js · TypeScript</h3><div class="stack-role" data-i18n="stack5Role">Backend</div><p class="stack-desc" data-i18n="stack5Desc">API em TypeScript com Prisma, contrato estruturado de saída e tipagem estrita.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">⚛️</div><h3 class="stack-name">React · Tailwind</h3><div class="stack-role" data-i18n="stack6Role">Dashboard</div><p class="stack-desc" data-i18n="stack6Desc">Painel em React, Vite e Tailwind com laudos e telemetria de tokens.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">🍃</div><h3 class="stack-name">MongoDB · Prisma</h3><div class="stack-role" data-i18n="stack7Role">Banco de dados</div><p class="stack-desc" data-i18n="stack7Desc">Clientes, execuções de auditoria e telemetria de tokens.</p></div>
+        <div class="stack-card"><div class="stack-icon" aria-hidden="true">📮</div><h3 class="stack-name">BullMQ · Redis</h3><div class="stack-role" data-i18n="stack8Role">Filas</div><p class="stack-desc" data-i18n="stack8Desc">Raspagem assíncrona e auditorias em lote.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Roadmap -->
   <section id="roadmap" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="roadTag">Visão de Futuro</span>
-        <h2 class="section-title text-gradient" data-i18n="roadTitle">Nosso Roadmap de Desenvolvimento</h2>
-        <p class="section-subtitle" data-i18n="roadSubtitle">
-          De agentes configurados manualmente até a governança regulatória 100% autônoma e multi-jurisdição.
-        </p>
+        <p class="section-tag" data-i18n="roadTag">Roadmap</p>
+        <h2 class="section-title" data-i18n="roadTitle">Do protótipo à governança autônoma</h2>
+        <p class="section-subtitle" data-i18n="roadSubtitle">Marcos do Hack Brasil 2026 e o que vem depois.</p>
       </div>
 
-      <div class="roadmap-timeline">
-        <div class="roadmap-card current">
-          <div class="roadmap-phase" data-i18n="road1Phase">Fase 1 · Marco M1/M2 (Atual)</div>
-          <h3 class="roadmap-title" data-i18n="road1Title">PoC & Validação Inicial</h3>
-          <p class="roadmap-desc" data-i18n="road1Desc">
-            Auditoria assistida de publicidade médica (CFM 2.336/2023) e telemedicina com 2 casos sintéticos, laudo em semáforo e catálogo normativo indexado.
-          </p>
-        </div>
-
-        <div class="roadmap-card">
-          <div class="roadmap-phase" data-i18n="road2Phase">Fase 2 · Marco M3/M4</div>
-          <h3 class="roadmap-title" data-i18n="road2Title">Orquestração Autônoma</h3>
-          <p class="roadmap-desc" data-i18n="road2Desc">
-            Agente inteligente que gera prompts dinâmicos e direciona o scraping do Firecrawl automaticamente a partir do manifesto de diretrizes (cfmScrapingBlueprint).
-          </p>
-        </div>
-
-        <div class="roadmap-card">
-          <div class="roadmap-phase" data-i18n="road3Phase">Fase 3 · Marco M5 (Submissão)</div>
-          <h3 class="roadmap-title" data-i18n="road3Title">Ciclo de Correção Completo</h3>
-          <p class="roadmap-desc" data-i18n="road3Desc">
-            Integração ponta a ponta com Devin API para abertura de PRs automáticos de adequação no GitHub e notificações executivas automatizadas via Resend.
-          </p>
-        </div>
-
-        <div class="roadmap-card">
-          <div class="roadmap-phase" data-i18n="road4Phase">Fase 4 · Pós-Hackathon</div>
-          <h3 class="roadmap-title" data-i18n="road4Title">Expansão e Multi-Jurisdição</h3>
-          <p class="roadmap-desc" data-i18n="road4Desc">
-            Cobertura completa de ANVISA (SaMD RDC 657), ANS, Ministério da Saúde e adaptação para regulação médica internacional (FDA, EMA).
-          </p>
-        </div>
-      </div>
+      <ol class="roadmap-timeline">
+        <li class="roadmap-card current">
+          <div class="roadmap-phase" data-i18n="road1Phase">Fase 1 · M1/M2 · atual</div>
+          <h3 class="roadmap-title" data-i18n="road1Title">Prova de conceito</h3>
+          <p class="roadmap-desc" data-i18n="road1Desc">Auditoria de publicidade médica (CFM 2.336/2023), telemedicina e prescrição digital com casos sintéticos, laudo em semáforo, alertas por e-mail e catálogo de normas indexado.</p>
+        </li>
+        <li class="roadmap-card">
+          <div class="roadmap-phase" data-i18n="road2Phase">Fase 2 · M3/M4</div>
+          <h3 class="roadmap-title" data-i18n="road2Title">Orquestração autônoma</h3>
+          <p class="roadmap-desc" data-i18n="road2Desc">Agente que gera os prompts e dirige a raspagem do Firecrawl a partir do manifesto de normas (cfmScrapingBlueprint).</p>
+        </li>
+        <li class="roadmap-card">
+          <div class="roadmap-phase" data-i18n="road3Phase">Fase 3 · M5 · submissão</div>
+          <h3 class="roadmap-title" data-i18n="road3Title">Ciclo de correção completo</h3>
+          <p class="roadmap-desc" data-i18n="road3Desc">Integração com a API do Devin para abrir Pull Requests de adequação no GitHub, com notificação executiva via Resend.</p>
+        </li>
+        <li class="roadmap-card">
+          <div class="roadmap-phase" data-i18n="road4Phase">Fase 4 · pós-hackathon</div>
+          <h3 class="roadmap-title" data-i18n="road4Title">Mais normas e outros países</h3>
+          <p class="roadmap-desc" data-i18n="road4Desc">Cobertura ampliada de ANVISA (SaMD, RDC 657), ANS e Ministério da Saúde, e adaptação para FDA e EMA.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- Section: Team -->
   <section id="equipe" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="teamTag">Quem Somos</span>
-        <h2 class="section-title text-gradient" data-i18n="teamTitle">Equipe Multidisciplinar</h2>
-        <p class="section-subtitle" data-i18n="teamSubtitle">
-          A combinação perfeita de médicos desenvolvedores, liderança clínica e especialistas em engenharia de dados e governança de IA.
-        </p>
+        <p class="section-tag" data-i18n="teamTag">Equipe</p>
+        <h2 class="section-title" data-i18n="teamTitle">Quem está construindo</h2>
+        <p class="section-subtitle" data-i18n="teamSubtitle">Dois médicos, um engenheiro de software e um especialista em governança de IA.</p>
       </div>
 
       <div class="team-grid">
         <div class="team-card">
-          <div class="team-avatar">AL</div>
+          <div class="team-avatar" aria-hidden="true">AL</div>
           <h3 class="team-name">Augusto Linhares</h3>
-          <div class="team-role" data-i18n="member1Role">PMO · Regulatory Data Lead · Pitch Lead</div>
-          <p class="team-bio" data-i18n="member1Bio">
-            Médico e desenvolvedor. Lidera o gerenciamento do projeto (Google PM), a curadoria e indexação do banco de normas médicas (CFM Normas) e a comunicação do pitch.
-          </p>
+          <div class="team-role" data-i18n="member1Role">PMO · Dados regulatórios · Pitch</div>
+          <p class="team-bio" data-i18n="member1Bio">Médico e desenvolvedor. Conduz a gestão do projeto (framework Google Project Management), a curadoria e indexação das normas do CFM e o pitch.</p>
         </div>
-
         <div class="team-card">
-          <div class="team-avatar">MC</div>
+          <div class="team-avatar" aria-hidden="true">MC</div>
           <h3 class="team-name">Mirella Batista Cruz</h3>
-          <div class="team-role" data-i18n="member2Role">Product Owner (PO) · Clinical Product Lead</div>
-          <p class="team-bio" data-i18n="member2Bio">
-            Médica e especialista clínica. Responsável pelo mapeamento das jornadas regulatórias, cenários clínicos de teste, requisitos de produto e critérios de aceite.
-          </p>
+          <div class="team-role" data-i18n="member2Role">Product Owner · Produto clínico</div>
+          <p class="team-bio" data-i18n="member2Bio">Médica. Mapeia as jornadas regulatórias, escreve os casos clínicos sintéticos de teste, os requisitos de produto e os critérios de aceite.</p>
         </div>
-
         <div class="team-card">
-          <div class="team-avatar">FS</div>
+          <div class="team-avatar" aria-hidden="true">FS</div>
           <h3 class="team-name">Frederico Da Silva</h3>
           <div class="team-role" data-i18n="member3Role">CTO · Tech Lead</div>
-          <p class="team-bio" data-i18n="member3Bio">
-            Engenheiro de software e arquiteto de sistemas. Lidera a engenharia da plataforma, arquitetura de monorepo, integrações de APIs, Docker e infraestrutura de nuvem.
-          </p>
+          <p class="team-bio" data-i18n="member3Bio">Engenheiro de software e arquiteto de sistemas. Lidera a engenharia da plataforma, o monorepo, as integrações de API e a infraestrutura em nuvem.</p>
         </div>
-
         <div class="team-card">
-          <div class="team-avatar">MF</div>
+          <div class="team-avatar" aria-hidden="true">MF</div>
           <h3 class="team-name">Matheus Furtado</h3>
-          <div class="team-role" data-i18n="member4Role">Clinical AI Governance & Compliance · CBA/ROI Lead</div>
-          <p class="team-bio" data-i18n="member4Bio">
-            Especialista em governança clínica de IA e conformidade ética. Responsável pela modelagem financeira, análise de custo-benefício (CBA) e métricas de ROI corporativo.
-          </p>
+          <div class="team-role" data-i18n="member4Role">Governança de IA clínica · CBA/ROI</div>
+          <p class="team-bio" data-i18n="member4Bio">Especialista em governança de IA clínica e conformidade ética. Responsável pela modelagem financeira, análise de custo-benefício e métricas de ROI.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-            <img src="img/logo.jpg" alt="Conform.ai" style="width: 2rem; height: 2rem; border-radius: 0.375rem;">
-            <span style="font-size: 1.25rem; font-weight: 800; color: #fff;">Conform<span class="text-gradient-brand">.ai</span></span>
+          <div class="footer-brand-row">
+            <img src="img/logo.jpg" alt="" class="footer-logo" width="32" height="32" loading="lazy">
+            <span class="footer-wordmark">Conform<span class="text-gradient-brand">.ai</span></span>
           </div>
-          <p class="footer-desc" data-i18n="footerDesc">
-            O primeiro agente autônomo de governança regulatória para a saúde digital. Desenvolvido para o Hack Brasil 2026.
-          </p>
+          <p class="footer-desc" data-i18n="footerDesc">Governança regulatória contínua para a saúde digital, construída no Hack Brasil 2026.</p>
           <div class="footer-notice-box">
-            <span>🛡️</span>
-            <span data-i18n="footerDisclaimer">
-              Item 6.9 do Regulamento Hack Brasil 2026: Este projeto opera exclusivamente com dados e casos 100% sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exposto.
-            </span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="footerDisclaimer">Item 6.9 do Regulamento Hack Brasil 2026: somente casos sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exibido.</span>
           </div>
         </div>
 
-        <div class="footer-nav">
-          <h5 data-i18n="footerNavTitle">Navegação</h5>
+        <nav class="footer-nav" aria-labelledby="footer-nav-title">
+          <h2 id="footer-nav-title" class="footer-heading" data-i18n="footerNavTitle">Navegação</h2>
           <ul>
-            <li><a href="#problema" data-i18n="navProblem">O Problema</a></li>
-            <li><a href="#como-funciona" data-i18n="navSolution">Como Funciona</a></li>
-            <li><a href="#modelo-de-negocio" data-i18n="navBmc">Modelo de Negócio</a></li>
+            <li><a href="#problema" data-i18n="navProblem">O problema</a></li>
+            <li><a href="#como-funciona" data-i18n="navSolution">Como funciona</a></li>
+            <li><a href="#modelo-de-negocio" data-i18n="navBmc">Modelo de negócio</a></li>
             <li><a href="#tecnologia" data-i18n="navStack">Tecnologia</a></li>
             <li><a href="#roadmap" data-i18n="navRoadmap">Roadmap</a></li>
             <li><a href="#equipe" data-i18n="navTeam">Equipe</a></li>
           </ul>
-        </div>
+        </nav>
 
         <div class="footer-nav">
-          <h5 data-i18n="footerLegalTitle">Conformidade & Direitos</h5>
+          <h2 class="footer-heading" data-i18n="footerLegalTitle">Projeto</h2>
           <ul>
-            <li><a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer">Repositório Oficial GitHub</a></li>
-            <li><a href="https://github.com/Conform-AI-health/conform-ai-health/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Licença MIT (Open Source)</a></li>
-            <li><a href="https://github.com/Conform-AI-health/conform-ai-health/issues" target="_blank" rel="noopener noreferrer">Suporte & Issues</a></li>
-            <li><span style="color: #64748b;">Hack Brasil 2026 · Trilha 07</span></li>
+            <li><a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" data-i18n="footerRepo">Repositório no GitHub</a></li>
+            <li><a href="https://github.com/Conform-AI-health/conform-ai-health/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="footerLicense">Licença MIT</a></li>
+            <li><a href="https://github.com/Conform-AI-health/conform-ai-health/issues" target="_blank" rel="noopener noreferrer" data-i18n="footerIssues">Issues e suporte</a></li>
+            <li><span class="footer-muted" data-i18n="footerTrack">Hack Brasil 2026 · Trilha 07</span></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div data-i18n="footerRights">© 2026 Conform.ai. Licença MIT.</div>
-        <div>Desenvolvido com excelência clínica e tecnológica pela equipe Conform.ai.</div>
+        <div data-i18n="footerCredit">Feito pela equipe Conform.ai para o Hack Brasil 2026.</div>
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>

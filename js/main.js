@@ -1,134 +1,155 @@
 /* ==========================================================================
    Conform.ai — Main Client JavaScript
-   Gerenciamento de idioma, simulador de laudo e interatividade
+   Idioma, simulador de laudo e menu móvel
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Estado inicial
-  let currentLang = localStorage.getItem('conform_lang') || 'pt';
-  let currentSimStatus = 'critical'; // 'critical' | 'warning' | 'compliant'
+(function () {
+  'use strict';
 
-  // Elementos do DOM
-  const langPtBtn = document.getElementById('lang-pt');
-  const langEnBtn = document.getElementById('lang-en');
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  var dictionary = window.i18n || {};
+  var STORAGE_KEY = 'conform_lang';
 
-  // Elementos do Simulador
-  const tabCritical = document.getElementById('tab-critical');
-  const tabWarning = document.getElementById('tab-warning');
-  const tabCompliant = document.getElementById('tab-compliant');
-  const simVerdictBadge = document.getElementById('sim-verdict-badge');
-  const simNorm = document.getElementById('sim-norm');
-  const simArticle = document.getElementById('sim-article');
-  const simEvidence = document.getElementById('sim-evidence');
-  const simAction = document.getElementById('sim-action');
-
-  // 1. Função de Atualização de Idioma
-  function updateLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('conform_lang', lang);
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-
-    // Atualizar botões
-    if (lang === 'pt') {
-      langPtBtn.classList.add('active');
-      langEnBtn.classList.remove('active');
-    } else {
-      langEnBtn.classList.add('active');
-      langPtBtn.classList.remove('active');
-    }
-
-    // Atualizar todos os elementos com data-i18n
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (i18n[lang] && i18n[lang][key]) {
-        el.textContent = i18n[lang][key];
-      }
-    });
-
-    // Atualizar elementos dinâmicos do simulador
-    updateSimulatorData();
+  function readLang() {
+    try {
+      var saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved === 'pt' || saved === 'en') return saved;
+    } catch (e) { /* armazenamento indisponível */ }
+    return 'pt';
   }
 
-  // 2. Função de Atualização do Simulador
-  function updateSimulatorData() {
-    const dict = i18n[currentLang];
-
-    if (currentSimStatus === 'critical') {
-      simVerdictBadge.className = 'verdict-badge red';
-      simVerdictBadge.innerHTML = '<span>●</span> ' + dict.tabCritical;
-      simNorm.textContent = dict.critNorm;
-      simArticle.textContent = dict.critArticle;
-      simEvidence.textContent = dict.critEvidence;
-      simAction.textContent = dict.critAction;
-
-      tabCritical.classList.add('active');
-      tabWarning.classList.remove('active');
-      tabCompliant.classList.remove('active');
-    } else if (currentSimStatus === 'warning') {
-      simVerdictBadge.className = 'verdict-badge yellow';
-      simVerdictBadge.innerHTML = '<span>●</span> ' + dict.tabWarning;
-      simNorm.textContent = dict.warnNorm;
-      simArticle.textContent = dict.warnArticle;
-      simEvidence.textContent = dict.warnEvidence;
-      simAction.textContent = dict.warnAction;
-
-      tabWarning.classList.add('active');
-      tabCritical.classList.remove('active');
-      tabCompliant.classList.remove('active');
-    } else if (currentSimStatus === 'compliant') {
-      simVerdictBadge.className = 'verdict-badge green';
-      simVerdictBadge.innerHTML = '<span>●</span> ' + dict.tabCompliant;
-      simNorm.textContent = dict.compNorm;
-      simArticle.textContent = dict.compArticle;
-      simEvidence.textContent = dict.compEvidence;
-      simAction.textContent = dict.compAction;
-
-      tabCompliant.classList.add('active');
-      tabCritical.classList.remove('active');
-      tabWarning.classList.remove('active');
-    }
+  function saveLang(lang) {
+    try { window.localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignora */ }
   }
 
-  // Event Listeners de Idioma
-  if (langPtBtn && langEnBtn) {
-    langPtBtn.addEventListener('click', () => updateLanguage('pt'));
-    langEnBtn.addEventListener('click', () => updateLanguage('en'));
+  var state = { lang: readLang(), status: 'critical' };
+
+  var SIM = {
+    critical: { badge: 'red', verdict: 'verdictCritical', norm: 'critNorm', article: 'critArticle', evidence: 'critEvidence', action: 'critAction' },
+    warning: { badge: 'yellow', verdict: 'verdictWarning', norm: 'warnNorm', article: 'warnArticle', evidence: 'warnEvidence', action: 'warnAction' },
+    compliant: { badge: 'green', verdict: 'verdictCompliant', norm: 'compNorm', article: 'compArticle', evidence: 'compEvidence', action: 'compAction' }
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var langPt = $('lang-pt');
+  var langEn = $('lang-en');
+  var menuToggle = $('menu-toggle');
+  var mobileMenu = $('mobile-menu');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.verdict-tab-btn'));
+  var panel = $('sim-panel');
+  var badge = $('sim-verdict-badge');
+  var badgeText = $('sim-verdict-text');
+  var fields = { norm: $('sim-norm'), article: $('sim-article'), evidence: $('sim-evidence'), action: $('sim-action') };
+
+  function t(key) {
+    var dict = dictionary[state.lang] || {};
+    return dict[key];
   }
 
-  // Event Listeners do Simulador
-  if (tabCritical && tabWarning && tabCompliant) {
-    tabCritical.addEventListener('click', () => {
-      currentSimStatus = 'critical';
-      updateSimulatorData();
+  function setMeta(selector, value) {
+    var el = document.querySelector(selector);
+    if (el && value) el.setAttribute('content', value);
+  }
+
+  function renderSimulator() {
+    var cfg = SIM[state.status];
+    if (!cfg || !panel) return;
+
+    badge.className = 'verdict-badge ' + cfg.badge;
+    badgeText.textContent = t(cfg.verdict) || '';
+    Object.keys(fields).forEach(function (k) {
+      if (fields[k]) fields[k].textContent = t(cfg[k]) || '';
     });
-    tabWarning.addEventListener('click', () => {
-      currentSimStatus = 'warning';
-      updateSimulatorData();
-    });
-    tabCompliant.addEventListener('click', () => {
-      currentSimStatus = 'compliant';
-      updateSimulatorData();
+
+    tabs.forEach(function (tab) {
+      var selected = tab.getAttribute('data-status') === state.status;
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+      tab.setAttribute('tabindex', selected ? '0' : '-1');
+      if (selected) panel.setAttribute('aria-labelledby', tab.id);
     });
   }
 
-  // Mobile Menu Toggle
+  function applyLanguage(lang) {
+    state.lang = lang === 'en' ? 'en' : 'pt';
+    saveLang(state.lang);
+    document.documentElement.lang = state.lang === 'pt' ? 'pt-BR' : 'en';
+
+    [[langPt, 'pt'], [langEn, 'en']].forEach(function (pair) {
+      if (!pair[0]) return;
+      var active = pair[1] === state.lang;
+      pair[0].classList.toggle('active', active);
+      pair[0].setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var value = t(el.getAttribute('data-i18n'));
+      if (value) el.textContent = value;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var value = t(el.getAttribute('data-i18n-aria'));
+      if (value) el.setAttribute('aria-label', value);
+    });
+
+    if (t('metaTitle')) document.title = t('metaTitle');
+    setMeta('meta[name="description"]', t('metaDescription'));
+    updateMenuLabel();
+    renderSimulator();
+  }
+
+  // Simulador: clique e teclado (padrão WAI-ARIA de abas)
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () {
+      state.status = tab.getAttribute('data-status');
+      renderSimulator();
+    });
+    tab.addEventListener('keydown', function (event) {
+      var next = null;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      if (next === null) return;
+      event.preventDefault();
+      state.status = tabs[next].getAttribute('data-status');
+      renderSimulator();
+      tabs[next].focus();
+    });
+  });
+
+  // Idioma
+  if (langPt) langPt.addEventListener('click', function () { applyLanguage('pt'); });
+  if (langEn) langEn.addEventListener('click', function () { applyLanguage('en'); });
+
+  // Menu móvel
+  function isMenuOpen() { return menuToggle && menuToggle.getAttribute('aria-expanded') === 'true'; }
+
+  function updateMenuLabel() {
+    if (!menuToggle) return;
+    var label = isMenuOpen() ? t('ariaMenuClose') : t('ariaMenuOpen');
+    if (label) menuToggle.setAttribute('aria-label', label);
+  }
+
+  function setMenu(open, returnFocus) {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mobileMenu.hidden = !open;
+    mobileMenu.classList.toggle('open', open);
+    updateMenuLabel();
+    if (!open && returnFocus) menuToggle.focus();
+  }
+
   if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
+    menuToggle.addEventListener('click', function () { setMenu(!isMenuOpen(), false); });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false, false); });
     });
-
-    // Fechar ao clicar em qualquer link
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-      });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && isMenuOpen()) setMenu(false, true);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1100 && isMenuOpen()) setMenu(false, false);
     });
   }
 
-  // Inicializar com o idioma selecionado
-  updateLanguage(currentLang);
-});
+  applyLanguage(state.lang);
+})();
