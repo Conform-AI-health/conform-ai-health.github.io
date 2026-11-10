@@ -405,3 +405,7 @@ const i18n = {
     footerDisclaimer: "Hack Brasil 2026 Rule 6.9: This project operates exclusively with 100% synthetic scenarios and public regulatory norms. Zero real patient or protected health information (PHI) is ever collected, processed, or exposed."
   }
 };
+
+if (typeof window !== 'undefined') {
+  window.i18n = i18n;
+}
