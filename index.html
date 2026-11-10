@@ -63,7 +63,7 @@
 
   <header class="navbar">
     <div class="wrap nav-row">
-      <a href="#" class="wordmark">Conform<span class="wordmark-dot" aria-hidden="true"></span><span class="sr-only">.</span>ai</a>
+      <a href="#" class="brand"><img src="img/logo.jpg" class="brand-logo" width="40" height="40" alt=""><span class="wordmark">Conform<span class="wordmark-dot" aria-hidden="true"></span><span class="sr-only">.</span>ai</span></a>
 
       <nav aria-label="Navegação principal" data-i18n-aria="ariaNavMain">
         <ul class="nav-links">
@@ -190,15 +190,15 @@
             <h3 class="h-row" data-i18n="painCard1Title">Quem responde é um médico</h3>
             <p data-i18n="painCard1Desc">Toda empresa de saúde tem um Diretor Técnico médico. Ele responde eticamente, com o próprio registro no CRM, pelo que a empresa publica e pelo que o software faz. No limite, um processo ético pode levar à cassação do registro profissional.</p>
           </div>
-          <figure class="problem-pic pic-a"><img src="img/archive/juramento.jpg" width="1000" height="1268" loading="lazy" alt="Juramento de Hipócrates em grego, manuscrito disposto em forma de cruz." data-i18n-alt="painCard1Alt"></figure>
+          <p class="problem-figure"><span class="fig-num" data-i18n="fig1Num">1 registro</span><span class="fig-cap" data-i18n="fig1Cap">O CRM do Diretor Técnico responde pela empresa.</span></p>
         </div>
 
         <div class="problem-row reveal">
           <div class="problem-text">
-            <h3 class="h-row" data-i18n="painCard2Title">Quatro órgãos, normas dispersas</h3>
+            <h3 class="h-row" data-i18n="painCard2Title">Quatro fontes, normas dispersas</h3>
             <p data-i18n="painCard2Desc">O CFM publica resoluções em PDF; a ANVISA regula software como dispositivo médico (SaMD); a ANS regula os planos de saúde; e a LGPD (Art. 11) trata dados de saúde como dados sensíveis. Cada um publica no seu canal, no seu ritmo.</p>
           </div>
-          <figure class="problem-pic pic-b"><img src="img/archive/diario-oficial.jpg" width="1000" height="746" loading="lazy" alt="Volume encadernado com edições antigas de um diário oficial, aberto sobre a mesa." data-i18n-alt="painCard2Alt"></figure>
+          <p class="problem-figure"><span class="fig-num" data-i18n="fig2Num">4 fontes</span><span class="fig-cap" data-i18n="fig2Cap">CFM, ANVISA, ANS e LGPD, cada uma no seu ritmo.</span></p>
         </div>
 
         <div class="problem-row reveal">
@@ -206,7 +206,7 @@
             <h3 class="h-row" data-i18n="painCard3Title">Caro com advogado, arriscado com IA genérica</h3>
             <p data-i18n="painCard3Desc">Uma auditoria regulatória inicial com consultoria especializada custa de R$ 25 mil a R$ 60 mil e leva de 30 a 60 dias. Um chatbot genérico, sem catálogo de normas vigentes, pode citar resoluções revogadas e gasta tokens lendo páginas inteiras.</p>
           </div>
-          <figure class="problem-pic pic-c"><img src="img/archive/estatutos.jpg" width="1000" height="1330" loading="lazy" alt="Folha de rosto de um tratado de 1766 sobre estatutos e leis." data-i18n-alt="painCard3Alt"></figure>
+          <p class="problem-figure"><span class="fig-num" data-i18n="fig3Num">R$ 25–⁠60 mil</span><span class="fig-cap" data-i18n="fig3Cap">e 30 a 60 dias por auditoria inicial com consultoria.</span></p>
         </div>
 
         <div class="problem-row problem-practice reveal">
@@ -214,7 +214,7 @@
             <h3 class="h-row" data-i18n="painHighlightTitle">Na prática</h3>
             <p data-i18n="painHighlightText">Um anúncio de clínica com fotos de “antes e depois” sem finalidade educativa contraria a Resolução CFM nº 2.336/2023 e pode virar processo ético no CRM. Uma prescrição digital sem assinatura ICP-Brasil pode ser recusada pela farmácia.</p>
           </div>
-          <figure class="problem-pic pic-d"><img src="img/archive/receituario.jpg" width="1000" height="708" loading="lazy" alt="Receituário manuscrito antigo, em francês, com indicações de preparo." data-i18n-alt="painHighlightAlt"></figure>
+          <p class="problem-figure"><span class="fig-num" data-i18n="fig4Num">Art. 14</span><span class="fig-cap" data-i18n="fig4Cap">Res. CFM 2.336/2023: “antes e depois” só com finalidade educativa.</span></p>
         </div>
       </div>
     </section>
@@ -308,17 +308,63 @@
 
     <!-- Equipe -->
     <section id="equipe" class="section team">
-      <div class="wrap team-grid">
-        <h2 class="sr-only" data-i18n="teamHidden">Equipe</h2>
-        <ul class="team-facts reveal">
-          <li data-i18n="teamFact1">4 pessoas</li>
-          <li data-i18n="teamFact2">2 médicos</li>
-          <li data-i18n="teamFact3">Hack Brasil 2026</li>
+      <div class="wrap">
+        <h2 class="h-display reveal" data-i18n="teamTitle">Quem está construindo.</h2>
+        <p class="lead team-lead reveal" data-i18n="teamSubtitle">Dois médicos, um engenheiro de software e um especialista em governança de IA.</p>
+        <ul class="members">
+          <li class="member reveal">
+            <!-- Foto: salve img/team/augusto.jpg (quadrada, ~320px) e troque o <span> abaixo por
+                 <img src="img/team/augusto.jpg" width="160" height="160" alt="" loading="lazy"> -->
+            <div class="member-photo"><span aria-hidden="true">AL</span></div>
+            <h3 class="member-name">Augusto Linhares</h3>
+            <p class="member-role" data-i18n="member1Role">PMO · Dados regulatórios · Pitch</p>
+            <p class="member-bio" data-i18n="member1Bio">Médico e desenvolvedor. Conduz a gestão do projeto, a curadoria e indexação das normas do CFM e o pitch.</p>
+            <!-- Links: preencha o href (LinkedIn e GitHub). Link vazio fica oculto automaticamente. -->
+            <ul class="member-links">
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Augusto Linhares" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></li>
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="GitHub de Augusto Linhares" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>GitHub</span></a></li>
+            </ul>
+          </li>
+          <li class="member reveal">
+            <!-- Foto: salve img/team/mirella.jpg (quadrada, ~320px) e troque o <span> abaixo por
+                 <img src="img/team/mirella.jpg" width="160" height="160" alt="" loading="lazy"> -->
+            <div class="member-photo"><span aria-hidden="true">MC</span></div>
+            <h3 class="member-name">Mirella Batista Cruz</h3>
+            <p class="member-role" data-i18n="member2Role">Product Owner · Produto clínico</p>
+            <p class="member-bio" data-i18n="member2Bio">Médica. Mapeia as jornadas regulatórias e escreve os casos clínicos sintéticos, os requisitos e os critérios de aceite.</p>
+            <!-- Links: preencha o href (LinkedIn e GitHub). Link vazio fica oculto automaticamente. -->
+            <ul class="member-links">
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Mirella Batista Cruz" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></li>
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="GitHub de Mirella Batista Cruz" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>GitHub</span></a></li>
+            </ul>
+          </li>
+          <li class="member reveal">
+            <!-- Foto: salve img/team/frederico.jpg (quadrada, ~320px) e troque o <span> abaixo por
+                 <img src="img/team/frederico.jpg" width="160" height="160" alt="" loading="lazy"> -->
+            <div class="member-photo"><span aria-hidden="true">FS</span></div>
+            <h3 class="member-name">Frederico Da Silva</h3>
+            <p class="member-role" data-i18n="member3Role">CTO · Tech Lead</p>
+            <p class="member-bio" data-i18n="member3Bio">Engenheiro de software e arquiteto de sistemas. Lidera a plataforma, o monorepo, as integrações de API e a infraestrutura.</p>
+            <!-- Links: preencha o href (LinkedIn e GitHub). Link vazio fica oculto automaticamente. -->
+            <ul class="member-links">
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Frederico Da Silva" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></li>
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="GitHub de Frederico Da Silva" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>GitHub</span></a></li>
+            </ul>
+          </li>
+          <li class="member reveal">
+            <!-- Foto: salve img/team/matheus.jpg (quadrada, ~320px) e troque o <span> abaixo por
+                 <img src="img/team/matheus.jpg" width="160" height="160" alt="" loading="lazy"> -->
+            <div class="member-photo"><span aria-hidden="true">MF</span></div>
+            <h3 class="member-name">Matheus Furtado</h3>
+            <p class="member-role" data-i18n="member4Role">Governança de IA clínica · CBA/ROI</p>
+            <p class="member-bio" data-i18n="member4Bio">Especialista em governança de IA clínica e conformidade ética. Responsável pela modelagem financeira e pela análise de custo-benefício.</p>
+            <!-- Links: preencha o href (LinkedIn e GitHub). Link vazio fica oculto automaticamente. -->
+            <ul class="member-links">
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Matheus Furtado" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></li>
+              <li><a href="" data-member-link target="_blank" rel="noopener noreferrer" aria-label="GitHub de Matheus Furtado" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>GitHub</span></a></li>
+            </ul>
+          </li>
         </ul>
-        <div class="team-text reveal">
-          <p><img class="team-mark" src="img/apple-touch-icon.png" width="180" height="180" alt="" loading="lazy"><span data-i18n="teamText1">Augusto Linhares, médico e desenvolvedor, conduz o projeto, a curadoria das normas do CFM e o pitch. Mirella Batista Cruz, médica, é a Product Owner e escreve os casos clínicos sintéticos e os critérios de aceite.</span></p>
-          <p class="team-second" data-i18n="teamText2">Frederico Da Silva, engenheiro de software, é o CTO e lidera a plataforma, o monorepo e a infraestrutura. Matheus Furtado cuida da governança de IA clínica e da análise de custo-benefício.</p>
-        </div>
       </div>
     </section>
 
@@ -338,9 +384,12 @@
   <footer class="footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div class="footer-notice">
+        <div class="footer-brand">
+          <img src="img/logo.jpg" class="footer-logo" width="72" height="72" alt="Logo do Conform.ai" loading="lazy">
+          <div class="footer-notice">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <p data-i18n="footerDisclaimer">Item 6.9 do Regulamento Hack Brasil 2026: somente casos sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exibido.</p>
+          </div>
         </div>
         <nav class="footer-nav" aria-labelledby="footer-nav-title">
           <h2 id="footer-nav-title" class="footer-heading" data-i18n="footerNavTitle">Navegação</h2>
@@ -362,8 +411,6 @@
           </ul>
         </div>
       </div>
-
-      <p class="credits"><span data-i18n="creditsLead">Imagens de acervo, em tons de cinza:</span> <a href="https://commons.wikimedia.org/wiki/File:Hippocratic_Oath_in_Greek_from_Jones,_The_Doctor%27s_Oath,_1924_Wellcome_M0011704.jpg" target="_blank" rel="noopener noreferrer">“Hippocratic Oath in Greek”, Wellcome Collection</a>, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=30624228" target="_blank" rel="noopener noreferrer">“Encadernado de edições antigas do diário oficial do estado do Piauí”</a>, Almanaque Lusofonista, <a href="https://creativecommons.org/licenses/by/3.0/br/deed.en/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Daines_Barrington,_Observations_on_the_Statutes_(2nd_ed,_1766,_title_page).jpg" target="_blank" rel="noopener noreferrer">“Observations on the Statutes” (1766)</a>, domínio público; <a href="https://commons.wikimedia.org/wiki/File:Prescriptions_m%C3%A9dicales,_A.6033.jpg" target="_blank" rel="noopener noreferrer">“Prescriptions médicales, A.6033”</a>, CC0. Via Wikimedia Commons.</p>
 
       <div class="footer-bottom">
         <p data-i18n="footerRights">© 2026 Conform.ai. Licença MIT.</p>

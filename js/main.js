@@ -133,6 +133,12 @@
     }, 2600);
   }
 
+  // ---------- Equipe: links só aparecem quando preenchidos ----------
+  document.querySelectorAll('[data-member-link]').forEach(function (a) {
+    var href = (a.getAttribute('href') || '').trim();
+    if (/^https:\/\//.test(href)) a.hidden = false;
+  });
+
   // ---------- Normas: uma de cada vez em destaque ----------
   var norms = Array.prototype.slice.call(document.querySelectorAll('.norm'));
   if (norms.length) {

@@ -83,16 +83,32 @@ const i18n = {
     painIntro: "Para quem não é da área médica: é assim que uma frase num site vira um processo ético.",
     painCard1Title: "Quem responde é um médico",
     painCard1Desc: "Toda empresa de saúde tem um Diretor Técnico médico. Ele responde eticamente, com o próprio registro no CRM, pelo que a empresa publica e pelo que o software faz. No limite, um processo ético pode levar à cassação do registro profissional.",
-    painCard1Alt: "Juramento de Hipócrates em grego, manuscrito disposto em forma de cruz.",
-    painCard2Title: "Quatro órgãos, normas dispersas",
+    painCard2Title: "Quatro fontes, normas dispersas",
     painCard2Desc: "O CFM publica resoluções em PDF; a ANVISA regula software como dispositivo médico (SaMD); a ANS regula os planos de saúde; e a LGPD (Art. 11) trata dados de saúde como dados sensíveis. Cada um publica no seu canal, no seu ritmo.",
-    painCard2Alt: "Volume encadernado com edições antigas de um diário oficial, aberto sobre a mesa.",
     painCard3Title: "Caro com advogado, arriscado com IA genérica",
     painCard3Desc: "Uma auditoria regulatória inicial com consultoria especializada custa de R$ 25 mil a R$ 60 mil e leva de 30 a 60 dias. Um chatbot genérico, sem catálogo de normas vigentes, pode citar resoluções revogadas e gasta tokens lendo páginas inteiras.",
-    painCard3Alt: "Folha de rosto de um tratado de 1766 sobre estatutos e leis.",
     painHighlightTitle: "Na prática",
     painHighlightText: "Um anúncio de clínica com fotos de “antes e depois” sem finalidade educativa contraria a Resolução CFM nº 2.336/2023 e pode virar processo ético no CRM. Uma prescrição digital sem assinatura ICP-Brasil pode ser recusada pela farmácia.",
-    painHighlightAlt: "Receituário manuscrito antigo, em francês, com indicações de preparo.",
+    fig1Num: "1 registro",
+    fig1Cap: "O CRM do Diretor Técnico responde pela empresa.",
+    fig2Num: "4 fontes",
+    fig2Cap: "CFM, ANVISA, ANS e LGPD, cada uma no seu ritmo.",
+    fig3Num: "R$ 25–⁠60 mil",
+    fig3Cap: "e 30 a 60 dias por auditoria inicial com consultoria.",
+    fig4Num: "Art. 14",
+    fig4Cap: "Res. CFM 2.336/2023: “antes e depois” só com finalidade educativa.",
+
+    teamTitle: "Quem está construindo.",
+    teamSubtitle: "Dois médicos, um engenheiro de software e um especialista em governança de IA.",
+    member1Role: "PMO · Dados regulatórios · Pitch",
+    member1Bio: "Médico e desenvolvedor. Conduz a gestão do projeto, a curadoria e indexação das normas do CFM e o pitch.",
+    member2Role: "Product Owner · Produto clínico",
+    member2Bio: "Médica. Mapeia as jornadas regulatórias e escreve os casos clínicos sintéticos, os requisitos e os critérios de aceite.",
+    member3Role: "CTO · Tech Lead",
+    member3Bio: "Engenheiro de software e arquiteto de sistemas. Lidera a plataforma, o monorepo, as integrações de API e a infraestrutura.",
+    member4Role: "Governança de IA clínica · CBA/ROI",
+    member4Bio: "Especialista em governança de IA clínica e conformidade ética. Responsável pela modelagem financeira e pela análise de custo-benefício.",
+
 
     // Como funciona
     howHidden: "Como funciona",
@@ -158,12 +174,6 @@ const i18n = {
     road7Tag: "Expansão",
 
     // Equipe
-    teamHidden: "Equipe",
-    teamText1: "Augusto Linhares, médico e desenvolvedor, conduz o projeto, a curadoria das normas do CFM e o pitch. Mirella Batista Cruz, médica, é a Product Owner e escreve os casos clínicos sintéticos e os critérios de aceite.",
-    teamText2: "Frederico Da Silva, engenheiro de software, é o CTO e lidera a plataforma, o monorepo e a infraestrutura. Matheus Furtado cuida da governança de IA clínica e da análise de custo-benefício.",
-    teamFact1: "4 pessoas",
-    teamFact2: "2 médicos",
-    teamFact3: "Hack Brasil 2026",
 
     // CTA e rodapé
     ctaTitle: "Conforme por padrão.",
@@ -175,8 +185,7 @@ const i18n = {
     footerIssues: "Issues e suporte",
     footerRights: "© 2026 Conform.ai. Licença MIT.",
     footerCredit: "Feito pela equipe Conform.ai para o Hack Brasil 2026.",
-    footerDisclaimer: "Item 6.9 do Regulamento Hack Brasil 2026: somente casos sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exibido.",
-    creditsLead: "Imagens de acervo, em tons de cinza:"
+    footerDisclaimer: "Item 6.9 do Regulamento Hack Brasil 2026: somente casos sintéticos e normas regulatórias públicas. Nenhum dado pessoal ou prontuário real de paciente é coletado, processado ou exibido."
   },
 
   en: {
@@ -251,16 +260,32 @@ const i18n = {
     painIntro: "For non-physicians: this is how one sentence on a website becomes an ethics proceeding.",
     painCard1Title: "A physician is accountable",
     painCard1Desc: "Every Brazilian healthcare company must have a physician as Medical Director. That person answers to the Medical Council, with their own license, for what the company publishes and what its software does. In the worst case, an ethics proceeding can end in license revocation.",
-    painCard1Alt: "The Hippocratic Oath in Greek, a manuscript laid out in the shape of a cross.",
-    painCard2Title: "Four regulators, scattered rules",
+    painCard2Title: "Four sources, scattered rules",
     painCard2Desc: "The Federal Council of Medicine (CFM) publishes resolutions as PDFs; ANVISA regulates software as a medical device (SaMD); ANS regulates health plans; and the LGPD, Brazil's data protection law (Art. 11), treats health data as sensitive. Each publishes on its own channel, at its own pace.",
-    painCard2Alt: "A bound volume of old official-gazette editions, open on a desk.",
     painCard3Title: "Costly with lawyers, risky with generic AI",
     painCard3Desc: "An initial regulatory audit by a specialized consultancy costs R$ 25,000 to R$ 60,000 (about US$ 5,000 to US$ 12,000) and takes 30 to 60 days. A generic chatbot without a catalog of active rules can cite repealed resolutions and burns tokens reading entire pages.",
-    painCard3Alt: "Title page of a 1766 treatise on statutes and laws.",
     painHighlightTitle: "In practice",
     painHighlightText: "A clinic ad with “before and after” photos and no educational purpose breaches CFM Resolution No. 2,336/2023 and can lead to an ethics proceeding at the regional council. A digital prescription without an ICP-Brasil signature can be refused by the pharmacy.",
-    painHighlightAlt: "An old handwritten prescription in French, with preparation notes.",
+    fig1Num: "1 license",
+    fig1Cap: "The Medical Director's license answers for the company.",
+    fig2Num: "4 sources",
+    fig2Cap: "CFM, ANVISA, ANS and the LGPD, each at its own pace.",
+    fig3Num: "R$ 25–⁠60k",
+    fig3Cap: "and 30 to 60 days for an initial consulting audit.",
+    fig4Num: "Art. 14",
+    fig4Cap: "CFM Res. 2,336/2023: “before and after” only for educational purposes.",
+
+    teamTitle: "Who is building it.",
+    teamSubtitle: "Two physicians, a software engineer and an AI governance specialist.",
+    member1Role: "PMO · Regulatory data · Pitch",
+    member1Bio: "Physician and developer. Runs project management, curates and indexes CFM regulations, and leads the pitch.",
+    member2Role: "Product Owner · Clinical product",
+    member2Bio: "Physician. Maps regulatory journeys and writes the synthetic clinical cases, requirements and acceptance criteria.",
+    member3Role: "CTO · Tech Lead",
+    member3Bio: "Software engineer and systems architect. Leads the platform, the monorepo, API integrations and infrastructure.",
+    member4Role: "Clinical AI governance · CBA/ROI",
+    member4Bio: "Specialist in clinical AI governance and ethics compliance. Owns the financial model and cost-benefit analysis.",
+
 
     howHidden: "How it works",
     step1Title: "First, we read the page.",
@@ -321,12 +346,6 @@ const i18n = {
     road7What: "ANVISA (SaMD, RDC 657), ANS, Ministry of Health, FDA and EMA",
     road7Tag: "Expansion",
 
-    teamHidden: "Team",
-    teamText1: "Augusto Linhares, a physician and developer, runs the project, curates the CFM rules and leads the pitch. Mirella Batista Cruz, a physician, is the Product Owner and writes the synthetic clinical cases and acceptance criteria.",
-    teamText2: "Frederico Da Silva, a software engineer, is the CTO and leads the platform, the monorepo and the infrastructure. Matheus Furtado owns clinical AI governance and the cost-benefit analysis.",
-    teamFact1: "4 people",
-    teamFact2: "2 physicians",
-    teamFact3: "Hack Brasil 2026",
 
     ctaTitle: "Compliant by default.",
     ctaDesc: "The code, the guardrail tests and the rules catalog are open on GitHub.",
@@ -337,8 +356,7 @@ const i18n = {
     footerIssues: "Issues and support",
     footerRights: "© 2026 Conform.ai. MIT License.",
     footerCredit: "Made by the Conform.ai team for Hack Brasil 2026.",
-    footerDisclaimer: "Rule 6.9 of the Hack Brasil 2026 official rules: synthetic cases and public regulations only. No personal data or real patient records are collected, processed or displayed.",
-    creditsLead: "Archival pictures, in grayscale:"
+    footerDisclaimer: "Rule 6.9 of the Hack Brasil 2026 official rules: synthetic cases and public regulations only. No personal data or real patient records are collected, processed or displayed."
   }
 };
 
