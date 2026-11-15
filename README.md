@@ -40,10 +40,10 @@ Cada cartão em `index.html` (seção `#equipe`) tem comentários explicando o q
 
 ## 👥 Equipe
 
-- **Augusto Linhares** — PMO, Regulatory Data Lead & Pitch Lead
-- **Mirella Batista Cruz** — Product Owner & Clinical Product Lead
-- **Frederico Da Silva** — CTO & Tech Lead
-- **Matheus Furtado** — Clinical AI Governance, Compliance & CBA/ROI Lead
+- **Augusto Linhares** — PMO, Regulatory Data Lead & Pitch Lead (médico e desenvolvedor)
+- **Mirella Batista Cruz** — Product Owner & Clinical Product Lead (médica)
+- **Frederico Da Silva** — CTO & Tech Lead (engenheiro de software)
+- **Matheus Furtado** — Clinical AI Governance, Compliance & CBA/ROI Lead (médico, cirurgião cardiovascular)
 
 ## 🔒 Dados e licença
 

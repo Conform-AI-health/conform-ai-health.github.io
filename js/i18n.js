@@ -99,7 +99,7 @@ const i18n = {
     fig4Cap: "Res. CFM 2.336/2023: “antes e depois” só com finalidade educativa.",
 
     teamTitle: "Quem está construindo.",
-    teamSubtitle: "Dois médicos, um engenheiro de software e um especialista em governança de IA.",
+    teamSubtitle: "Três médicos e um engenheiro de software.",
     member1Role: "PMO · Dados regulatórios · Pitch",
     member1Bio: "Médico e desenvolvedor. Conduz a gestão do projeto, a curadoria e indexação das normas do CFM e o pitch.",
     member2Role: "Product Owner · Produto clínico",
@@ -107,7 +107,7 @@ const i18n = {
     member3Role: "CTO · Tech Lead",
     member3Bio: "Engenheiro de software e arquiteto de sistemas. Lidera a plataforma, o monorepo, as integrações de API e a infraestrutura.",
     member4Role: "Governança de IA clínica · CBA/ROI",
-    member4Bio: "Especialista em governança de IA clínica e conformidade ética. Responsável pela modelagem financeira e pela análise de custo-benefício.",
+    member4Bio: "Médico, cirurgião cardiovascular. Especialista em governança de IA clínica e conformidade ética, responsável pela modelagem financeira e pela análise de custo-benefício.",
 
 
     // Como funciona
@@ -276,7 +276,7 @@ const i18n = {
     fig4Cap: "CFM Res. 2,336/2023: “before and after” only for educational purposes.",
 
     teamTitle: "Who is building it.",
-    teamSubtitle: "Two physicians, a software engineer and an AI governance specialist.",
+    teamSubtitle: "Three physicians and a software engineer.",
     member1Role: "PMO · Regulatory data · Pitch",
     member1Bio: "Physician and developer. Runs project management, curates and indexes CFM regulations, and leads the pitch.",
     member2Role: "Product Owner · Clinical product",
@@ -284,7 +284,7 @@ const i18n = {
     member3Role: "CTO · Tech Lead",
     member3Bio: "Software engineer and systems architect. Leads the platform, the monorepo, API integrations and infrastructure.",
     member4Role: "Clinical AI governance · CBA/ROI",
-    member4Bio: "Specialist in clinical AI governance and ethics compliance. Owns the financial model and cost-benefit analysis.",
+    member4Bio: "Physician and cardiovascular surgeon. Specialist in clinical AI governance and ethics compliance; owns the financial model and cost-benefit analysis.",
 
 
     howHidden: "How it works",
