@@ -1,42 +1,51 @@
 # 🌐 Conform.ai — Página Pública Oficial (Hack Brasil 2026)
 
-> **URL Pública em HTTPS:** [https://conform-ai-health.github.io/](https://conform-ai-health.github.io/)  
-> **Repositório do Produto:** [https://github.com/Conform-AI-health/conform-ai-health](https://github.com/Conform-AI-health/conform-ai-health)  
-> **Trilha:** Trilha 07 — Logística & Automação (Impacto em Saúde)  
+> **URL pública (HTTPS):** [https://conform-ai-health.github.io/](https://conform-ai-health.github.io/)
+> **Repositório do produto:** [Conform-AI-health/conform-ai-health](https://github.com/Conform-AI-health/conform-ai-health)
+> **Trilha:** Trilha 07 — Logística & Automação (impacto em saúde)
 
----
+Página estática em HTML, CSS e JavaScript puro, sem build e sem dependências. É publicada pelo GitHub Pages a cada push em `main` (`.github/workflows/deploy.yml`). Fica num repositório separado do monorepo para não interferir no CI/CD da AWS.
 
-## 🏥 Sobre o Projeto
+## O que a página mostra
 
-O **Conform.ai** é o primeiro agente autônomo de governança regulatória contínua (*Service-as-a-Software*) desenhado para HealthTechs, clínicas e plataformas digitais de saúde no Brasil. 
+1. **Hero:** o nome Conform.ai em escala de pôster, com o ponto do nome funcionando como semáforo sincronizado ao laudo de exemplo.
+2. **Faixa do Item 6.9:** somente casos sintéticos e normas públicas, sem nenhum dado de paciente.
+3. **Laudo vivo:** três casos sintéticos (CFM 2.336/2023 Art. 11, 2.314/2022 Art. 3º, 2.299/2021 Art. 2º), cada um com norma, artigo, evidência e ação recomendada, mais a barra de tokens.
+4. **O problema:** dor contada pelo fundador de uma HealthTech em pré-lançamento ou MVP, em três partes: incerteza regulatória invisível, time-to-market vs. conformidade e due diligence.
+5. **Como funciona:** quatro etapas (Firecrawl, catálogo de normas vigentes, Gemini com guardrails, laudo via Resend; Devin em integração).
+6. **Normas mapeadas**, **Negócio** (Service-as-a-Software), **Marcos M1–M5**, **Equipe** e **Fechamento**.
 
-Ele automatiza a auditoria contínua de sites, termos e sistemas contra as resoluções vigentes do **CFM** (Conselho Federal de Medicina — com destaque para a Resolução nº 2.336/2023 de Publicidade Médica, Telemedicina e IA), **ANVISA** (SaMD RDC 657/2022), **ANS** e **LGPD** (Art. 11 de dados sensíveis), gerando laudos em semáforo (🟢/🟡/🔴), citações com rastreabilidade ao artigo da lei e propostas de adequação técnica direta no código-fonte.
+Bilíngue (PT-BR / EN): o seletor no topo troca todo o texto, os rótulos de acessibilidade, o título e a descrição da página.
 
----
+## Regras de conteúdo
 
-## 🚀 Estrutura Desta Página
+- **Todo número precisa de fonte.** A tabela de fontes e o histórico de decisões ficam em `03_Reunioes_e_Transcricoes/03_DECISOES_LANDING_PAGE.md`, no segundo cérebro do projeto.
+- **A página não promete o que o repositório do produto ainda não faz.** O que está em integração aparece marcado como tal.
+- **Sem formulários nem rastreadores** (LGPD e Item 6.9).
 
-Esta página é estática, extremamente leve, segura e livre de rastreadores ou formulários que coletem dados pessoais (em total conformidade com a LGPD e o Item 6.9 do Regulamento do Hack Brasil 2026):
+## Como editar
 
-- **Bilíngue (PT-BR / EN):** Alternador no topo para atender à banca e ao júri internacional.
-- **Didática Regulatória:** Explicação detalhada da complexidade e dos riscos éticos da saúde para jurados e desenvolvedores não-médicos.
-- **Simulador Interativo de Laudo:** Prévia em tempo real do Semáforo de Conformidade e do *Token Efficiency Meter* (>90% de economia de tokens).
-- **Business Model Canvas:** Tese *Service-as-a-Software* da Sequoia Capital, proposta de valor e modelo de monetização.
-- **Stack & Roadmap:** Arquitetura multi-agente integrando Firecrawl, Google Gemini, Devin e Resend.
-- **Equipe:** Perfis executivos dos 4 integrantes (Augusto Linhares, Mirella Batista Cruz, Frederico Da Silva e Matheus Furtado).
+| O quê | Onde |
+| :--- | :--- |
+| Textos (PT e EN) | `js/i18n.js`. As chaves são as mesmas nos dois idiomas, e o `index.html` traz a versão PT como fallback sem JavaScript. |
+| Estilo | `css/styles.css`, com tokens no `:root` |
+| Comportamento | `js/main.js`: idioma, laudo, semáforo, menu e animações (respeita `prefers-reduced-motion`) |
+| Imagem de compartilhamento | `img/og-image.png` (1200×630) |
 
----
+### Equipe
+Cada cartão em `index.html` (seção `#equipe`) tem comentários explicando o que preencher:
+- **Foto:** imagem quadrada em `img/team/<nome>.jpg`.
+- **Links:** preencha o `href` dos botões de LinkedIn e GitHub. Só aparecem links que começam com `https://`; link vazio fica oculto.
+- **Currículo:** chaves `member1Bio` a `member4Bio` em `js/i18n.js`, em PT e EN.
 
-## 👥 Equipe Conform.ai
+## 👥 Equipe
 
-- **Augusto Linhares** — *PMO, Regulatory Data Lead & Pitch Lead* (Médico e Desenvolvedor)
-- **Mirella Batista Cruz** — *Product Owner (PO) & Clinical Product Lead* (Médica e Especialista Clínica)
-- **Frederico Da Silva** — *CTO & Tech Lead* (Arquiteto de Software e Engenheiro de Dados)
-- **Matheus Furtado** — *Clinical AI Governance, Compliance & CBA/ROI Lead* (Especialista em Governança de IA)
+- **Augusto Linhares** — PMO, Regulatory Data Lead & Pitch Lead
+- **Mirella Batista Cruz** — Product Owner & Clinical Product Lead
+- **Frederico Da Silva** — CTO & Tech Lead
+- **Matheus Furtado** — Clinical AI Governance, Compliance & CBA/ROI Lead
 
----
+## 🔒 Dados e licença
 
-## 🔒 Dados e Licenciamento
-
-- **Item 6.9 do Regulamento Hack Brasil 2026:** O projeto opera exclusivamente com dados e cenários 100% sintéticos e normas públicas federais. Nenhum dado pessoal ou prontuário real de paciente é coletado ou exposto.
-- **Licença:** MIT License.
+- **Item 6.9 do Regulamento Hack Brasil 2026:** somente casos sintéticos e normas públicas federais. Nenhum dado pessoal ou prontuário real de paciente é coletado ou exibido.
+- **Licença:** MIT.
