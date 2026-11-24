@@ -7,7 +7,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <title>Conform.ai · Auditoria regulatória contínua em saúde</title>
-  <meta name="description" content="Agentes de IA que auditam sites e fluxos de saúde digital contra normas vigentes do CFM, ANVISA, ANS e LGPD, citando o artigo e a evidência de cada apontamento.">
+  <meta name="description" content="Agentes de IA que auditam sites e fluxos de saúde digital contra normas vigentes do CFM, ANVISA, ANS e LGPD, citando a norma e o trecho de cada apontamento.">
   <meta name="author" content="Augusto Linhares, Mirella Batista Cruz, Frederico Da Silva, Matheus Furtado">
   <meta name="theme-color" content="#0b1329">
   <link rel="canonical" href="https://conform-ai-health.github.io/">
@@ -18,7 +18,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:url" content="https://conform-ai-health.github.io/">
   <meta property="og:title" content="Conform.ai · Auditoria regulatória contínua em saúde">
-  <meta property="og:description" content="Agentes de IA auditam sites e fluxos de saúde contra normas vigentes do CFM, ANVISA, ANS e LGPD. Laudo em semáforo com artigo e evidência. Hack Brasil 2026.">
+  <meta property="og:description" content="Agentes de IA auditam sites e fluxos de saúde contra normas vigentes do CFM, ANVISA, ANS e LGPD. Laudo em semáforo com norma e trecho. Hack Brasil 2026.">
   <meta property="og:image" content="https://conform-ai-health.github.io/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Conform.ai · Auditoria regulatória contínua em saúde">
-  <meta name="twitter:description" content="Laudo em semáforo com artigo e evidência, contra normas vigentes do CFM, ANVISA, ANS e LGPD.">
+  <meta name="twitter:description" content="Laudo em semáforo com norma e trecho, contra normas vigentes do CFM, ANVISA, ANS e LGPD.">
   <meta name="twitter:image" content="https://conform-ai-health.github.io/img/og-image.png">
   <meta name="twitter:image:alt" content="Conform.ai: laudo em semáforo citando a Resolução CFM nº 2.336/2023, Art. 11.">
 
@@ -67,9 +67,10 @@
 
       <nav aria-label="Navegação principal" data-i18n-aria="ariaNavMain">
         <ul class="nav-links">
-          <li><a href="#laudo" data-i18n="navLaudo">Laudo</a></li>
           <li><a href="#problema" data-i18n="navProblem">O problema</a></li>
+          <li><a href="#laudo" data-i18n="navLaudo">Laudo</a></li>
           <li><a href="#como-funciona" data-i18n="navSolution">Como funciona</a></li>
+          <li><a href="#normas" data-i18n="navNorms">Normas</a></li>
           <li><a href="#negocio" data-i18n="navBmc">Negócio</a></li>
           <li><a href="#equipe" data-i18n="navTeam">Equipe</a></li>
         </ul>
@@ -80,6 +81,8 @@
           <button type="button" id="lang-pt" class="lang-btn active" aria-pressed="true" lang="pt-BR">PT</button>
           <button type="button" id="lang-en" class="lang-btn" aria-pressed="false" lang="en">EN</button>
         </div>
+        <!-- TODO: trocar por <a href=URL> quando houver o link da plataforma -->
+        <button type="button" class="btn btn-primary btn-demo btn-nav nav-demo" disabled aria-disabled="true" data-i18n="ctaDemo">Testar a demonstração</button>
         <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-nav" aria-label="Abrir o repositório no GitHub" data-i18n-aria="ariaGithub">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           <span class="btn-nav-label" data-i18n="navGithub">GitHub</span>
@@ -92,13 +95,18 @@
 
     <nav id="mobile-menu" class="mobile-menu" aria-label="Menu" hidden>
       <ul class="wrap">
-        <li><a href="#laudo" data-i18n="navLaudo">Laudo</a></li>
         <li><a href="#problema" data-i18n="navProblem">O problema</a></li>
+        <li><a href="#laudo" data-i18n="navLaudo">Laudo</a></li>
         <li><a href="#como-funciona" data-i18n="navSolution">Como funciona</a></li>
         <li><a href="#normas" data-i18n="navNorms">Normas</a></li>
         <li><a href="#negocio" data-i18n="navBmc">Negócio</a></li>
         <li><a href="#equipe" data-i18n="navTeam">Equipe</a></li>
         <li><a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" data-i18n="footerRepo">Repositório no GitHub</a></li>
+        <li class="mobile-demo">
+          <!-- TODO: trocar por <a href=URL> quando houver o link da plataforma -->
+          <button type="button" class="btn btn-primary btn-demo" disabled aria-disabled="true" aria-describedby="demo-note-menu" data-i18n="ctaDemo">Testar a demonstração</button>
+          <p class="demo-note" id="demo-note-menu" data-i18n="demoNote">Link em breve. Caso sintético, sem dado real.</p>
+        </li>
       </ul>
     </nav>
   </header>
@@ -108,14 +116,22 @@
     <!-- Hero: o ponto do nome é um semáforo -->
     <section class="hero">
       <div class="wrap hero-inner">
-        <h1 class="hero-name">
+        <p class="hero-name">
           <span class="hero-word">Conform</span><span id="hero-dot" class="hero-dot is-red" aria-hidden="true"></span><span class="sr-only">.</span><span class="hero-word">ai</span>
-        </h1>
-        <p class="hero-title hero-enter" data-i18n="heroTitle">Auditoria regulatória contínua para a saúde digital.</p>
+        </p>
+        <p class="hero-kicker hero-enter" data-i18n="heroKicker">Auditoria regulatória para HealthTechs brasileiras</p>
+        <h1 class="hero-story hero-enter"><span data-i18n="heroStoryA">A melhor ideia de saúde pode morrer</span> <span class="hero-story-hot" data-i18n="heroStoryB">antes de nascer.</span></h1>
+        <p class="hero-title hero-enter" data-i18n="heroTitle">Não por falha da tecnologia. Por uma regra que ninguém checou a tempo.</p>
+        <figure class="hero-illu hero-enter"><img src="img/ilu-hero.webp" width="1100" height="660" alt="" data-i18n-alt="heroIlluAlt" fetchpriority="low"></figure>
         <div class="hero-foot hero-enter">
-          <p class="hero-desc" data-i18n="heroDesc">Agentes de IA leem sites, termos de uso e fluxos clínicos e os confrontam com as normas vigentes do CFM, ANVISA, ANS e LGPD. Cada apontamento cita o artigo e a frase da página que o motivou.</p>
+          <p class="hero-desc" data-i18n="heroDesc">O Conform.ai lê o que a startup já tem (páginas, termos de uso e fluxos) e mostra, antes do lançamento, onde o CFM, a ANVISA, a ANS e a LGPD podem barrar. Cada apontamento cita a norma e o trecho da página que o motivou.</p>
           <div class="hero-actions">
-            <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="ctaGithub">Ver o código no GitHub</a>
+            <div class="demo-cta">
+              <!-- TODO: trocar por <a href=URL> quando houver o link da plataforma -->
+              <button type="button" class="btn btn-primary btn-lg btn-demo" disabled aria-disabled="true" aria-describedby="demo-note-hero" data-i18n="ctaDemo">Testar a demonstração</button>
+              <p class="demo-note" id="demo-note-hero" data-i18n="demoNote">Link em breve. Caso sintético, sem dado real.</p>
+            </div>
+            <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-secondary" data-i18n="ctaGithub">Ver o código no GitHub</a>
             <a href="#laudo" class="text-link" data-i18n="ctaLaudo">Ver um laudo</a>
           </div>
         </div>
@@ -123,24 +139,94 @@
       </div>
     </section>
 
-    <!-- Item 6.9 -->
-    <div class="synth-band">
-      <div class="wrap synth-inner">
-        <svg class="synth-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-        <p data-i18n="synthBand">Item 6.9 do Regulamento: este projeto usa somente casos sintéticos e normas públicas. Nenhum dado de paciente ou prontuário real é coletado, processado ou exibido.</p>
+    <!-- Problema: linhas com imagens de acervo à margem -->
+    <section id="problema" class="section problem">
+      <div class="wrap">
+        <div class="problem-axis">
+          <figure class="problem-mock"><img src="img/ilu-portao.webp" width="720" height="804" alt="" data-i18n-alt="mockAlt1" loading="lazy"></figure>
+          <h2 class="h-display reveal" data-i18n="painTitle">O portão que o fundador não vê.</h2>
+          <p class="lead reveal" data-i18n="painIntro">Entre a ideia e o paciente há um portão com quatro travas. Um software de saúde pode ser enquadrado pela ANVISA como dispositivo médico (SaMD), e essa pergunta pode chegar só quando o primeiro cliente faz.</p>
+        </div>
+
+        <figure class="gate reveal">
+          <svg viewBox="0 0 900 310" role="img" data-i18n-aria="ariaGate" aria-label="Duas versões do mesmo caminho. Sem checagem, a ideia chega ao portão com as travas CFM, ANVISA, ANS e LGPD e é barrada. Com checagem, um laudo em semáforo aparece antes do portão e a ideia passa.">
+            <text class="g-t" x="4" y="22" data-i18n="gateTop">SEM CHECAGEM: o portão aparece no fim</text>
+            <line class="g-line g-dash" x1="4" y1="110" x2="560" y2="110"/>
+            <circle cx="50" cy="96" r="14" fill="var(--sky)"/><rect x="38" y="104" width="24" height="18" rx="3" fill="var(--sky)"/>
+            <text class="g-b" x="22" y="150" data-i18n="gateIdea">Ideia</text>
+            <rect x="620" y="52" width="14" height="116" fill="var(--surface-2)"/><rect x="770" y="52" width="14" height="116" fill="var(--surface-2)"/>
+            <rect x="634" y="60" width="136" height="100" rx="4" fill="var(--surface)" stroke="var(--red)" stroke-width="2"/>
+            <line x1="634" y1="85" x2="770" y2="85" stroke="var(--red)" stroke-width="2"/><line x1="634" y1="110" x2="770" y2="110" stroke="var(--red)" stroke-width="2"/><line x1="634" y1="135" x2="770" y2="135" stroke="var(--red)" stroke-width="2"/>
+            <text class="g-t" x="648" y="78">CFM</text><text class="g-t" x="648" y="103">ANVISA</text><text class="g-t" x="648" y="128">ANS</text><text class="g-t" x="648" y="153">LGPD</text>
+            <text class="g-b g-red" x="798" y="116" data-i18n="gateBlocked">Barrado</text>
+            <line x1="4" y1="186" x2="896" y2="186" stroke="var(--surface-2)" stroke-dasharray="2 6"/>
+            <text class="g-t" x="4" y="212" data-i18n="gateBottom">COM CHECAGEM: o laudo aparece antes do lançamento</text>
+            <line class="g-line" x1="4" y1="270" x2="560" y2="270"/>
+            <circle cx="50" cy="256" r="14" fill="var(--sky)"/><rect x="38" y="264" width="24" height="18" rx="3" fill="var(--sky)"/>
+            <text class="g-b" x="22" y="306" data-i18n="gateIdea2">Ideia</text>
+            <rect x="250" y="226" width="30" height="84" rx="8" fill="var(--surface)" stroke="var(--surface-2)" stroke-width="2"/>
+            <circle cx="265" cy="242" r="8" fill="var(--red)" opacity=".3"/><circle cx="265" cy="268" r="8" fill="var(--yellow)" opacity=".3"/><circle cx="265" cy="294" r="8" fill="var(--green)"/>
+            <text class="g-t" x="292" y="272" data-i18n="gateReport">Laudo em semáforo</text>
+            <rect x="620" y="214" width="14" height="96" fill="var(--surface-2)"/><rect x="770" y="214" width="14" height="96" fill="var(--surface-2)"/>
+            <path d="M634 222 L634 310 L690 298 L690 236 Z" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <path d="M770 222 L770 310 L714 298 L714 236 Z" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <text class="g-b g-green" x="798" y="270" data-i18n="gatePass">Passa</text>
+          </svg>
+          <!-- Versão vertical para celular: o SVG de 900 px fica ilegível abaixo de 640 px -->
+          <div class="gate-m" role="img" data-i18n-aria="ariaGate" aria-label="Duas versões do mesmo caminho. Sem checagem, a ideia chega ao portão com as travas CFM, ANVISA, ANS e LGPD e é barrada. Com checagem, um laudo em semáforo aparece antes do portão e a ideia passa.">
+            <div class="gm-row" aria-hidden="true">
+              <p class="gm-title" data-i18n="gateTop">SEM CHECAGEM: o portão aparece no fim</p>
+              <div class="gm-flow">
+                <span class="gm-node" data-i18n="gateIdea">Ideia</span>
+                <span class="gm-arrow">→</span>
+                <span class="gm-locks"><b>CFM</b><b>ANVISA</b><b>ANS</b><b>LGPD</b></span>
+                <span class="gm-arrow">→</span>
+                <span class="gm-end gm-red" data-i18n="gateBlocked">Barrado</span>
+              </div>
+            </div>
+            <div class="gm-row" aria-hidden="true">
+              <p class="gm-title" data-i18n="gateBottom">COM CHECAGEM: o laudo aparece antes do lançamento</p>
+              <div class="gm-flow">
+                <span class="gm-node" data-i18n="gateIdea2">Ideia</span>
+                <span class="gm-arrow">→</span>
+                <span class="gm-report"><i class="d-red"></i><i class="d-yellow"></i><i class="d-green"></i><span data-i18n="gateReport">Laudo em semáforo</span></span>
+                <span class="gm-arrow">→</span>
+                <span class="gm-end gm-green" data-i18n="gatePass">Passa</span>
+              </div>
+            </div>
+          </div>
+          <figcaption data-i18n="gateCaption">Mesmo caminho, mesma ideia. A diferença é quando o portão fica visível.</figcaption>
+        </figure>
+
+
+        <div class="problem-row reveal">
+          <figure class="problem-mock"><img src="img/ilu-checagem.webp" width="720" height="799" alt="" data-i18n-alt="mockAlt2" loading="lazy"></figure>
+          <div class="problem-text">
+            <h3 class="h-row" data-i18n="painCard2Title">Lançar rápido ou lançar conforme</h3>
+            <p data-i18n="painCard2Desc">Uma auditoria feita por consultoria costuma ser cara e demorada. Com o Conform.ai, a checagem acontece ainda no desenvolvimento, antes do lançamento.</p>
+          </div>
+          <p class="problem-figure"><span class="fig-num" data-i18n="fig2Num">Antes do lançamento</span><span class="fig-cap" data-i18n="fig2Cap">a checagem entra enquanto ainda dá tempo de corrigir.</span></p>
+        </div>
+
+        <div class="problem-row reveal">
+          <figure class="problem-mock"><img src="img/ilu-rodada.webp" width="720" height="548" alt="" data-i18n-alt="mockAlt3" loading="lazy"></figure>
+          <div class="problem-text">
+            <h3 class="h-row" data-i18n="painCard3Title">A rodada pode cair na due diligence</h3>
+            <p data-i18n="painCard3Desc">Falhas de LGPD costumam aparecer na due diligence e podem gerar exigências, atraso ou renegociação de valor. O laudo rastreável, com norma e trecho em cada apontamento, ajuda a mostrar que o produto foi checado antes do lançamento.</p>
+          </div>
+          <p class="problem-figure"><span class="fig-num" data-i18n="fig3Num">Due diligence</span><span class="fig-cap" data-i18n="fig3Cap">laudo auditável como evidência para investidores.</span></p>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Laudo vivo -->
     <section id="laudo" class="section laudo">
       <div class="wrap laudo-grid">
         <div class="laudo-copy">
+          <p class="turn reveal" data-i18n="laudoTurn">E se o portão fosse visível antes do lançamento?</p>
           <h2 class="h-display reveal" data-i18n="laudoTitle">Um laudo que cita a lei e a frase.</h2>
-          <p class="lead reveal" data-i18n="laudoDesc">Escolha um caso sintético. O agente mostra a norma aplicável, o artigo, o trecho exato da página e o que fazer. Sem citação, não há apontamento.</p>
-          <div class="laudo-stat reveal">
-            <p class="laudo-stat-number" data-i18n="laudoStatHeader">até 94%</p>
-            <p class="laudo-stat-text" data-i18n="laudoStatText">menos tokens ao ler as normas como matriz de regras, em vez do PDF ou HTML bruto.</p>
-          </div>
+          <p class="lead reveal" data-i18n="laudoDesc">Exemplos ilustrativos de laudo, com casos sintéticos. Cada apontamento mostra a norma aplicável, o trecho da página e o que fazer. Sem citação, não há apontamento.</p>
+          <p class="laudo-stat-text reveal" data-i18n="laudoStatText">Só aponta o que consegue citar: a norma e o trecho da página.</p>
         </div>
 
         <div class="laudo-card shutter" data-ui>
@@ -165,56 +251,6 @@
             <div class="laudo-row"><dt data-i18n="simActionLabel">Ação recomendada</dt><dd id="sim-action">Retirar a garantia de resultado e descrever o procedimento de forma informativa, deixando claro que a evolução varia de paciente para paciente.</dd></div>
           </dl>
 
-          <div class="tokens">
-            <p class="tokens-head" data-i18n="tokenHeader">Tokens enviados ao modelo</p>
-            <div class="tokens-bars" aria-hidden="true">
-              <div class="tokens-bar raw"><span data-i18n="tokenRaw">HTML bruto</span><b>61.450</b></div>
-              <div class="tokens-bar clean"><span data-i18n="tokenClean">Markdown limpo</span><b>7.100</b></div>
-            </div>
-            <p class="tokens-note" data-i18n="tokenNote">Média do benchmark com páginas de clínicas: 61.450 → 7.100 tokens (−88%).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Problema: linhas com imagens de acervo à margem -->
-    <section id="problema" class="section problem">
-      <div class="wrap">
-        <div class="problem-axis">
-          <h2 class="h-display reveal" data-i18n="painTitle">O risco que o fundador não vê.</h2>
-          <p class="lead reveal" data-i18n="painIntro">Pense numa HealthTech prestes a lançar: o produto está pronto, mas ninguém leu as dezenas de normas que se aplicam a ele.</p>
-        </div>
-
-        <div class="problem-row reveal">
-          <div class="problem-text">
-            <h3 class="h-row" data-i18n="painCard1Title">Incerteza regulatória invisível</h3>
-            <p data-i18n="painCard1Desc">O fundador domina a tecnologia, não as resoluções do CFM sobre telemedicina, prescrição e prontuário, nem as regras da ANVISA para software como dispositivo médico (SaMD). Quem responde por elas é o Diretor Técnico médico, com o próprio registro no CRM. O Conform.ai lê as páginas, os termos de uso e os fluxos antes do lançamento e aponta onde há violação ou falta consentimento.</p>
-          </div>
-          <p class="problem-figure"><span class="fig-num" data-i18n="fig1Num">4 fontes</span><span class="fig-cap" data-i18n="fig1Cap">CFM, ANVISA, ANS e LGPD, cada uma no seu ritmo.</span></p>
-        </div>
-
-        <div class="problem-row reveal">
-          <div class="problem-text">
-            <h3 class="h-row" data-i18n="painCard2Title">Lançar rápido ou lançar conforme</h3>
-            <p data-i18n="painCard2Desc">A regulação já atrasa um lançamento em saúde digital de 6 a 12 meses. Uma auditoria inicial com consultoria custa de R$ 25 mil a R$ 60 mil e leva de 30 a 60 dias. Com o Conform.ai, a correção acontece ainda no desenvolvimento, antes do lançamento.</p>
-          </div>
-          <p class="problem-figure"><span class="fig-num" data-i18n="fig2Num">6–⁠12 meses</span><span class="fig-cap" data-i18n="fig2Cap">a mais para lançar, por causa da regulação.</span></p>
-        </div>
-
-        <div class="problem-row reveal">
-          <div class="problem-text">
-            <h3 class="h-row" data-i18n="painCard3Title">A rodada pode cair na due diligence</h3>
-            <p data-i18n="painCard3Desc">Brechas de LGPD ou falhas regulatórias podem atrasar ou derrubar uma rodada de investimento. O laudo rastreável, com artigo e evidência em cada apontamento, serve de prova de que o produto nasceu em conformidade.</p>
-          </div>
-          <p class="problem-figure"><span class="fig-num" data-i18n="fig3Num">Due diligence</span><span class="fig-cap" data-i18n="fig3Cap">laudo auditável como evidência para investidores.</span></p>
-        </div>
-
-        <div class="problem-row problem-practice reveal">
-          <div class="problem-text">
-            <h3 class="h-row" data-i18n="painHighlightTitle">Na prática</h3>
-            <p data-i18n="painHighlightText">Um anúncio de clínica com fotos de “antes e depois” sem finalidade educativa contraria a Resolução CFM nº 2.336/2023 e pode virar processo ético no CRM. Uma prescrição digital sem assinatura ICP-Brasil pode ser recusada pela farmácia.</p>
-          </div>
-          <p class="problem-figure"><span class="fig-num" data-i18n="fig4Num">Art. 14</span><span class="fig-cap" data-i18n="fig4Cap">Res. CFM 2.336/2023: “antes e depois” só com finalidade educativa.</span></p>
         </div>
       </div>
     </section>
@@ -224,12 +260,12 @@
       <div class="wrap">
         <h2 class="sr-only" data-i18n="howHidden">Como funciona</h2>
         <ol class="stairs">
-          <li class="stair reveal"><h3 class="h-stair" data-i18n="step1Title">Primeiro, lemos a página.</h3><p data-i18n="step1Desc">O Firecrawl raspa o site e converte HTML e PDF em Markdown limpo, sem menus, scripts e estilos: 61.450 tokens viram 7.100.</p></li>
-          <li class="stair reveal"><h3 class="h-stair" data-i18n="step2Title">Depois, só normas vigentes.</h3><p data-i18n="step2Desc">Um índice leve, com vigência e tags, escolhe as resoluções que se aplicam ao produto. As revogadas saem antes de chegar ao modelo.</p></li>
-          <li class="stair reveal"><h3 class="h-stair" data-i18n="step3Title">Então, auditoria com guardrails.</h3><p data-i18n="step3Desc">O Google Gemini compara a evidência com os artigos selecionados. Só cita normas do catálogo e aponta o trecho de cada achado.</p></li>
-          <li class="stair stair-last reveal"><h3 class="h-stair" data-i18n="step4Title">Por fim, laudo e correção.</h3><p data-i18n="step4Desc">O laudo em semáforo segue por e-mail via Resend. A abertura de Pull Requests de correção pelo Devin está em integração.</p></li>
+          <li class="stair reveal"><h3 class="h-stair" data-i18n="step1Title">Primeiro, lemos a página.</h3><p data-i18n="step1Desc">O Firecrawl raspa o site e converte HTML e PDF em Markdown limpo, sem menus, scripts e estilos.</p></li>
+          <li class="stair reveal"><h3 class="h-stair" data-i18n="step2Title">Depois, só normas vigentes.</h3><p data-i18n="step2Desc">Um índice leve, com vigência e tags, escolhe as resoluções que se aplicam ao produto.</p></li>
+          <li class="stair reveal"><h3 class="h-stair" data-i18n="step3Title">Então, auditoria com guardrails.</h3><p data-i18n="step3Desc">O Google Gemini compara a evidência com as normas selecionadas. Achado sem ancoragem na norma e no trecho é descartado.</p></li>
+          <li class="stair stair-last reveal"><h3 class="h-stair" data-i18n="step4Title">Por fim, laudo e correção.</h3><p data-i18n="step4Desc">O laudo em semáforo segue por e-mail ao administrador da conta. A abertura de Pull Requests de correção pelo Devin é visão, ainda em integração.</p></li>
         </ol>
-        <p class="how-outcome reveal" data-i18n="howOutcome">Hoje são 30 a 60 dias de consultoria. A meta do fluxo completo é 15 minutos.</p>
+        <p class="how-outcome reveal" data-i18n="howOutcome">Converter a página de HTML para Markdown reduz o texto enviado ao modelo. A economia ainda é estimada, não medida.</p>
       </div>
     </section>
 
@@ -237,10 +273,10 @@
     <section id="normas" class="section norms">
       <div class="wrap">
         <p class="norms-sentence reveal">
-          <span class="norms-lead" data-i18n="normsLead">Normas mapeadas, artigo por artigo:</span>
-          <span class="norm">Resolução CFM 2.336/2023</span>, <span class="norm">CFM 2.217/2018</span>, <span class="norm">CFM 2.314/2022</span>, <span class="norm">CFM 2.299/2021</span>, <span class="norm">CFM 1.821/2007</span>, <span class="norm">LGPD Art. 11</span>, <span class="norm">ANS RN 509/2022</span>, <span class="norm">ANVISA RDC 727/2022</span> e <span class="norm norm-revoked"><s>CFM 1.974/2011</s></span> <span class="norms-revoked-note" data-i18n="normsRevoked">(revogada, descartada pelo guardrail)</span>.
+          <span class="norms-lead" data-i18n="normsLead">Normas em mapeamento:</span>
+          <span class="norm">Resolução CFM 2.336/2023</span>, <span class="norm">CFM 2.217/2018</span>, <span class="norm">CFM 2.314/2022</span>, <span class="norm">CFM 2.299/2021</span>, <span class="norm">CFM 1.821/2007</span>, <span class="norm">LGPD Art. 11</span>, <span class="norm">ANS RN 509/2022</span>, <span class="norm">ANVISA RDC 727/2022</span> e <span class="norm norm-revoked"><s>CFM 1.974/2011</s></span> <span class="norms-revoked-note" data-i18n="normsRevoked">(marcada como revogada no catálogo)</span>.
         </p>
-        <p class="norms-note reveal" data-i18n="normsNote">Publicidade, ética médica, telemedicina, prontuário, prescrição, dados sensíveis, planos de saúde e propaganda de medicamentos. A lista cresce com o manifesto de normas do projeto.</p>
+        <p class="norms-note reveal" data-i18n="normsNote">Temas em mapeamento: publicidade, ética médica, telemedicina, prontuário, prescrição, dados sensíveis, planos de saúde e propaganda de medicamentos. A cobertura ainda está em construção.</p>
       </div>
     </section>
 
@@ -267,18 +303,18 @@
             <h3 class="biz-col-title" data-i18n="bizCol2Title">O que entregamos</h3>
             <ul>
               <li data-i18n="bizC2Item1">Diagnóstico antes do lançamento, com meta de 15 minutos</li>
-              <li data-i18n="bizC2Item2">Artigo vigente e evidência em cada apontamento</li>
-              <li data-i18n="bizC2Item3">Correção por Pull Request para aprovação humana (em integração)</li>
-              <li data-i18n="bizC2Item4">Alertas executivos quando uma norma nova sai</li>
+              <li data-i18n="bizC2Item2">Norma vigente e trecho da página em cada apontamento</li>
+              <li><span data-i18n="bizC2Item3">Correção por Pull Request para aprovação humana (em integração)</span> <span class="plan-tag" data-i18n="tagVision">Visão</span></li>
+              <li><span data-i18n="bizC2Item4">Alertas executivos quando uma norma nova sai</span> <span class="plan-tag" data-i18n="tagVision">Visão</span></li>
             </ul>
           </div>
           <div>
             <h3 class="biz-col-title" data-i18n="bizCol3Title">Como cobramos</h3>
             <ul>
-              <li data-i18n="bizC3Item1">Radar: auditoria do site público e alertas</li>
-              <li data-i18n="bizC3Item2">Governança: fluxos internos e relatórios semanais</li>
-              <li data-i18n="bizC3Item3">Autopilot: correções no código via Devin</li>
-              <li data-i18n="bizC3Item4">Taxa por Pull Request aceito e API/MCP de normas</li>
+              <li><span data-i18n="bizC3Item1">Radar: auditoria do site público e alertas</span> <span class="plan-tag" data-i18n="tagPlan">Plano</span></li>
+              <li><span data-i18n="bizC3Item2">Governança: fluxos internos e relatórios semanais</span> <span class="plan-tag" data-i18n="tagPlan">Plano</span></li>
+              <li><span data-i18n="bizC3Item3">Autopilot: correções no código via Devin</span> <span class="plan-tag" data-i18n="tagVision">Visão</span></li>
+              <li><span data-i18n="bizC3Item4">Taxa por Pull Request aceito e API/MCP de normas</span> <span class="plan-tag" data-i18n="tagPlan">Plano</span></li>
             </ul>
           </div>
         </div>
@@ -294,12 +330,11 @@
           <table class="road-table reveal">
             <tbody>
               <tr><td data-i18n="road1When">até 10/11</td><td data-i18n="road1What">Ingestão das normas, formulário e motor Gemini</td><td data-i18n="road1Tag">M1</td></tr>
-              <tr><td data-i18n="road2When">até 17/11</td><td data-i18n="road2What">Alertas via Resend e PoC de Pull Request com Devin</td><td data-i18n="road2Tag">M2</td></tr>
-              <tr><td data-i18n="road3When">até 24/11</td><td data-i18n="road3What">Validação clínica e testes de não alucinação</td><td data-i18n="road3Tag">M3</td></tr>
               <tr class="group-end"><td data-i18n="road4When">até 27/11</td><td data-i18n="road4What">Demo estável e vídeo de contingência</td><td data-i18n="road4Tag">M4</td></tr>
               <tr><td data-i18n="road5When">30/11</td><td data-i18n="road5What">Pitch final e submissão</td><td data-i18n="road5Tag">M5</td></tr>
               <tr class="group-start"><td data-i18n="road6When">depois</td><td data-i18n="road6What">Orquestração autônoma da raspagem pelo manifesto de normas</td><td data-i18n="road6Tag">Fase 2</td></tr>
               <tr><td data-i18n="road7When">depois</td><td data-i18n="road7What">ANVISA (SaMD, RDC 657), ANS, Ministério da Saúde, FDA e EMA</td><td data-i18n="road7Tag">Expansão</td></tr>
+              <tr><td data-i18n="road8When">depois</td><td data-i18n="road8What">Pull Requests de correção pelo Devin, para aprovação humana</td><td data-i18n="road8Tag">Visão</td></tr>
             </tbody>
           </table>
         </div>
@@ -374,12 +409,28 @@
         <h2 class="cta-title reveal" data-i18n="ctaTitle">Conforme por padrão.</h2>
         <div class="cta-foot reveal">
           <p data-i18n="ctaDesc">O código, os testes de guardrail e o catálogo de normas estão abertos no GitHub.</p>
-          <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-i18n="ctaGithub">Ver o código no GitHub</a>
+          <div class="cta-actions">
+            <div class="demo-cta">
+              <!-- TODO: trocar por <a href=URL> quando houver o link da plataforma -->
+              <button type="button" class="btn btn-primary btn-lg btn-demo" disabled aria-disabled="true" aria-describedby="demo-note-cta" data-i18n="ctaDemo">Testar a demonstração</button>
+              <p class="demo-note" id="demo-note-cta" data-i18n="demoNote">Link em breve. Caso sintético, sem dado real.</p>
+            </div>
+            <a href="https://github.com/Conform-AI-health/conform-ai-health" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-secondary" data-i18n="ctaGithub">Ver o código no GitHub</a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- Item 6.9 -->
+    <div class="synth-band">
+      <div class="wrap synth-inner">
+        <svg class="synth-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <p data-i18n="synthBand">Item 6.9 do Regulamento: este projeto usa somente casos sintéticos e normas públicas. Nenhum dado de paciente ou prontuário real é coletado, processado ou exibido.</p>
+      </div>
+    </div>
+
 
   <footer class="footer">
     <div class="wrap">
@@ -394,8 +445,8 @@
         <nav class="footer-nav" aria-labelledby="footer-nav-title">
           <h2 id="footer-nav-title" class="footer-heading" data-i18n="footerNavTitle">Navegação</h2>
           <ul>
-            <li><a href="#laudo" data-i18n="navLaudo">Laudo</a></li>
             <li><a href="#problema" data-i18n="navProblem">O problema</a></li>
+            <li><a href="#laudo" data-i18n="navLaudo">Laudo</a></li>
             <li><a href="#como-funciona" data-i18n="navSolution">Como funciona</a></li>
             <li><a href="#normas" data-i18n="navNorms">Normas</a></li>
             <li><a href="#negocio" data-i18n="navBmc">Negócio</a></li>
