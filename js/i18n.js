@@ -104,15 +104,13 @@ const i18n = {
     fig3Cap: "laudo auditável como evidência para investidores.",
 
     teamTitle: "Quem está construindo.",
-    teamSubtitle: "Três médicos e um engenheiro de software.",
-    member1Role: "PMO · Dados regulatórios · Pitch",
-    member1Bio: "Médico e desenvolvedor. Conduz a gestão do projeto, a curadoria e indexação das normas do CFM e o pitch.",
-    member2Role: "Product Owner · Produto clínico",
-    member2Bio: "Médica. Mapeia as jornadas regulatórias e escreve os casos clínicos sintéticos, os requisitos e os critérios de aceite.",
-    member3Role: "CTO · Tech Lead",
-    member3Bio: "Engenheiro de software e arquiteto de sistemas. Lidera a plataforma, o monorepo, as integrações de API e a infraestrutura.",
-    member4Role: "Governança de IA clínica · CBA/ROI",
-    member4Bio: "Médico, cirurgião cardiovascular. Especialista em governança de IA clínica e conformidade ética, responsável pela modelagem financeira e pela análise de custo-benefício.",
+    teamSubtitle: "Dois médicos e um engenheiro de software.",
+    member1Role: "PMO · Dados, LGPD e produto · Pitch",
+    member1Bio: "Médico e desenvolvedor. Conduz a gestão do projeto, a governança de dados, LGPD e produto, a curadoria e indexação das normas do CFM, a modelagem financeira, a análise de custo-benefício e o pitch.",
+    member2Role: "Product Owner · Governança clínica",
+    member2Bio: "Médica. Responde pela governança clínica, mapeia as jornadas regulatórias e escreve os casos clínicos sintéticos, os requisitos e os critérios de aceite.",
+    member3Role: "CTO · Governança tech",
+    member3Bio: "Engenheiro de software e arquiteto de sistemas. Responde pela governança tech e lidera a plataforma, o monorepo, as integrações de API e a infraestrutura.",
 
 
     // Como funciona
@@ -287,15 +285,13 @@ const i18n = {
     fig3Cap: "an auditable report as evidence for investors.",
 
     teamTitle: "Who is building it.",
-    teamSubtitle: "Three physicians and a software engineer.",
-    member1Role: "PMO · Regulatory data · Pitch",
-    member1Bio: "Physician and developer. Runs project management, curates and indexes CFM regulations, and leads the pitch.",
-    member2Role: "Product Owner · Clinical product",
-    member2Bio: "Physician. Maps regulatory journeys and writes the synthetic clinical cases, requirements and acceptance criteria.",
-    member3Role: "CTO · Tech Lead",
-    member3Bio: "Software engineer and systems architect. Leads the platform, the monorepo, API integrations and infrastructure.",
-    member4Role: "Clinical AI governance · CBA/ROI",
-    member4Bio: "Physician and cardiovascular surgeon. Specialist in clinical AI governance and ethics compliance; owns the financial model and cost-benefit analysis.",
+    teamSubtitle: "Two physicians and a software engineer.",
+    member1Role: "PMO · Data, LGPD and product · Pitch",
+    member1Bio: "Physician and developer. Runs project management, data, LGPD and product governance, curates and indexes CFM regulations, owns the financial model and cost-benefit analysis, and leads the pitch.",
+    member2Role: "Product Owner · Clinical governance",
+    member2Bio: "Physician. Leads clinical governance, maps regulatory journeys and writes the synthetic clinical cases, requirements and acceptance criteria.",
+    member3Role: "CTO · Tech governance",
+    member3Bio: "Software engineer and systems architect. Leads tech governance, the platform, the monorepo, API integrations and infrastructure.",
 
 
     howHidden: "How it works",

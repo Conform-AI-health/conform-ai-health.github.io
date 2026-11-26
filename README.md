@@ -36,14 +36,13 @@ Bilíngue (PT-BR / EN): o seletor no topo troca todo o texto, os rótulos de ace
 Cada cartão em `index.html` (seção `#equipe`) tem comentários explicando o que preencher:
 - **Foto:** imagem quadrada em `img/team/<nome>.jpg`.
 - **Links:** preencha o `href` dos botões de LinkedIn e GitHub. Só aparecem links que começam com `https://`; link vazio fica oculto.
-- **Currículo:** chaves `member1Bio` a `member4Bio` em `js/i18n.js`, em PT e EN.
+- **Currículo:** chaves `member1Bio` a `member3Bio` em `js/i18n.js`, em PT e EN.
 
 ## 👥 Equipe
 
-- **Augusto Linhares** — PMO, Regulatory Data Lead & Pitch Lead (médico e desenvolvedor)
-- **Mirella Batista Cruz** — Product Owner & Clinical Product Lead (médica)
-- **Frederico Da Silva** — CTO & Tech Lead (engenheiro de software)
-- **Matheus Furtado** — Clinical AI Governance, Compliance & CBA/ROI Lead (médico, cirurgião cardiovascular)
+- **Augusto Linhares** — PMO · Governança de dados, LGPD e produto · CBA/ROI · Pitch (médico e desenvolvedor)
+- **Mirella Batista Cruz** — Product Owner · Governança clínica (médica)
+- **Frederico Da Silva** — CTO · Governança tech (engenheiro de software)
 
 ## 🔒 Dados e licença
 
