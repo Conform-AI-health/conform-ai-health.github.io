@@ -4,7 +4,7 @@
 > **Repositório do produto:** [Conform-AI-health/conform-ai-health](https://github.com/Conform-AI-health/conform-ai-health)
 > **Trilha:** Trilha 07 — Logística & Automação (impacto em saúde)
 
-Página estática em HTML, CSS e JavaScript puro, sem build e sem dependências. É publicada pelo GitHub Pages a cada push em `main` (`.github/workflows/deploy.yml`). Fica num repositório separado do monorepo para não interferir no CI/CD da AWS.
+Página estática em HTML, CSS e JavaScript puro, sem build e sem dependências. É publicada pelo GitHub Pages a cada push em `main`, direto da raiz da branch (configuração do Pages, sem workflow próprio). Fica num repositório separado do monorepo para não interferir no CI/CD da AWS.
 
 ## O que a página mostra
 
