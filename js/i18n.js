@@ -28,7 +28,7 @@ const i18n = {
     navTeam: "Equipe",
     navGithub: "GitHub",
 
-    heroTitle: "Não por falha da tecnologia. Por uma regra que ninguém checou a tempo.",
+    heroTitle: "Basta uma regra que ninguém checou a tempo, ou que ninguém sabia que existia.",
     heroKicker: "Auditoria regulatória para HealthTechs brasileiras",
     heroStoryA: "A melhor ideia de saúde pode morrer",
     heroStoryB: "antes de nascer.",
@@ -211,7 +211,7 @@ const i18n = {
     navTeam: "Team",
     navGithub: "GitHub",
 
-    heroTitle: "Not because the technology fails. Because nobody checked the rule in time.",
+    heroTitle: "All it takes is one rule nobody checked in time, or nobody even knew about.",
     heroKicker: "Regulatory audits for Brazilian healthtechs",
     heroStoryA: "The best health idea can die",
     heroStoryB: "before it is born.",
