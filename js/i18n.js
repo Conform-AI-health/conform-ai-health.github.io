@@ -45,7 +45,7 @@ const i18n = {
     heroDesc: "O Conform.ai lê o que a startup já tem (páginas, termos de uso e fluxos) e mostra, antes do lançamento, onde o CFM, a ANVISA, a ANS e a LGPD podem barrar. Cada apontamento cita a norma e o trecho da página que o motivou.",
     ctaGithub: "Ver o código no GitHub",
     ctaDemo: "Testar a demonstração",
-    demoNote: "Link em breve. Caso sintético, sem dado real.",
+    demoNote: "Na tela de login, clique em “Acessar demonstração”: conta de visitante por 1 hora. Caso sintético, sem dado real.",
     ctaLaudo: "Ver um laudo",
     heroMeta: "Hack Brasil 2026 · Trilha 07, Logística e Automação",
 
@@ -228,7 +228,7 @@ const i18n = {
     heroDesc: "Conform.ai reads what the startup already has (pages, terms of service and workflows) and shows, before launch, where CFM, ANVISA, ANS and LGPD may block it. Every finding cites the rule and quotes the passage of the page that triggered it.",
     ctaGithub: "See the code on GitHub",
     ctaDemo: "Try the demo",
-    demoNote: "Link coming soon. Synthetic case, no real data.",
+    demoNote: "On the login screen, click “Acessar demonstração”: visitor account for 1 hour. Synthetic case, no real data.",
     ctaLaudo: "See a report",
     heroMeta: "Hack Brasil 2026 · Track 07, Logistics and Automation",
 
